@@ -1,0 +1,14 @@
+{
+  "name": "sirenbot2.0",
+  "version": "1.0.0",
+  "description": "SirenBot2.0 now written in tasty JavaScript",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "author": "Duckie",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "11.2.1"
+  }
+}
