@@ -49,4 +49,4 @@ bot.on('message', message => {
     }
 });
 
-bot.login("Mzg2NDA5NzAwOTkzNzk0MDQ5.DQPj5w.hpUMlvcxbA8WxxL8lteFX0Albyo");
+bot.login(process.env.BOT_TOKEN);
