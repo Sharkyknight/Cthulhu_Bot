@@ -1,12 +1,12 @@
 {
-  "name": "sirenbot2.0",
+  "name": "Cthulhubot1.0",
   "version": "1.0.0",
-  "description": "SirenBot2.0 now written in tasty JavaScript",
+  "description": "CthulhuBot2.0 now written in tasty JavaScript",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js"
   },
-  "author": "Duckie",
+  "author": "Sharky",
   "license": "ISC",
   "dependencies": {
     "discord.js": "11.2.1"
