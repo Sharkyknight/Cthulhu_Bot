@@ -43,7 +43,7 @@ bot.on('message', message => {
             break;
 
         case "help":
-            message.channel.sendMessage("List of current commands: \n\n *smh: Shows the current, previous, and upcoming SMH maps. \n *rotation: Shows the order of rotation for SMH maps. \n *quack: my maker decided to keep this command. It forces me to say weird sentences. \n *(secret): Easter Egg command. Humor me...");
+            message.channel.sendMessage("List of current commands: \n\n *smh: Shows the current, previous, and upcoming SMH maps. \n *rotation: Shows the order of rotation for SMH maps. \n *quack: my maker decided to keep this command. It forces me to say a weird sentence. \n *(secret): Easter Egg command. Humor me...");
             break;
 
         case "rotation":
