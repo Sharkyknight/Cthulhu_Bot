@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-const PREFIX = ".";
+const PREFIX = "*";
 
 var bot = new Discord.Client();
 
@@ -42,10 +42,17 @@ bot.on('message', message => {
             }
             break;
 
-        case "quack":
-            message.channel.sendMessage("Easter Egg: I am the SMH Rotation Bot, first daughter of Duckie of House Pure Malice, First of Her Name, the Mascot, Nerd #1, Writer of Code and Mother of Bots.\n\n\n Have a request for another bot? Send her a DM. And maybe an offering of breadcrumbs.");
+        case "help":
+            message.channel.sendMessage("List of current commands: \n\n *smh: Shows the current, previous, and upcoming SMH maps. \n *rotation: Shows the order of rotation for SMH maps. \n *quack: my maker decided to keep this command. It forces me to say weird sentences. \n *(secret): Easter Egg command. Humor me...");
             break;
 
+        case "rotation":
+            message.channel.sendMessage("The map rotation is as follows: \n\n Cursed Isles. \n Haunted Seas. \n Kraken Hunt. \n Atlantis.");
+            break;
+
+        case "quack":
+            message.channel.sendMessage("I am the SMH Rotation Bot, first daughter of Duckie of House Pure Malice, First of Her Name, the Mascot, Nerd #1, Writer of Code and Mother of Bots.\n\n\n Have a request for another bot? Send her a DM. And maybe an offering of breadcrumbs.");
+            break;       
     }
 });
 
