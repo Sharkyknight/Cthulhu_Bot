@@ -64,7 +64,7 @@ bot.on('message', message => {
             var hours = Math.ceil(time / (3600 * 1000));
             var hoursnow = ((hours - 8) % 24);
             var minutes = Math.floor(time / (60000));
-            var minutesnow = ((minutes - 20) % 60);
+            var minutesnow = ((minutes) % 60);
             if (minutesnow < 10) {
                 if (hoursnow < 13) {
                     message.channel.sendMessage("the time is " + hoursnow + ":0" + minutesnow + "AM game right now");
