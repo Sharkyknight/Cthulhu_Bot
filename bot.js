@@ -72,20 +72,20 @@ bot.on('message', message => {
             var minutesnow = ((minutes) % 60);
             if (minutesnow < 10) {
                 if (hoursnow < 13) {
-                    message.channel.sendMessage("the time is " + hoursnow + ":0" + minutesnow + "AM game right now");
+                    message.channel.sendMessage("the time is " + hoursnow + ":0" + minutesnow + "AM game time right now");
                 }
                 else if (hoursnow >= 13) {
                     var hoursnnn = (hoursnow - 12);
-                    message.channel.sendMessage("the time is " + hoursnnn + ":0" + minutesnow + "PM game right now");
+                    message.channel.sendMessage("the time is " + hoursnnn + ":0" + minutesnow + "PM game time right now");
                 }
             }
             else if (minutesnow >= 10) {
                 if (hoursnow >= 13) {
                     var hoursnn = (hoursnow - 12);
-                    message.channel.sendMessage("the time is " + hoursnn + ":" + minutesnow + "PM game right now");
+                    message.channel.sendMessage("the time is " + hoursnn + ":" + minutesnow + "PM game time right now");
                 }
                 else if (hoursnow < 13) {
-                    message.channel.sendMessage("the time is " + hoursnow + ":" + minutesnow + "AM game right now");
+                    message.channel.sendMessage("the time is " + hoursnow + ":" + minutesnow + "AM game time right now");
                 }
             }
 
