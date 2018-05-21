@@ -36,7 +36,7 @@ bot.on('message', message => {
             console.log(week);
             var index = (week % 4);
             console.log(index);
-             if(index == 0) {
+            if (index == 0) {
                 message.channel.sendMessage("This week's available map is Cursed Isles. \n\n\n Last week's map (expiring Saturday): Atlantis.\n\n\n Next week's map is Haunted Seas.");
             }
             else if (index == 1) {
@@ -58,13 +58,13 @@ bot.on('message', message => {
             message.channel.sendMessage("The map rotation is as follows: \n\n Cursed Isles. \n Haunted Seas. \n Kraken Hunt. \n Atlantis.");
             break;
 
-          case "time":
+        case "time":
             var today = new Date();
             var time = today.getTime();
             var hours = Math.ceil(time / (3600 * 1000));
             var hoursnow = ((hours - 8) % 24);
             var minutes = Math.floor(time / (60000));
-            var minutesnow = ((minutes - 15) % 60);
+            var minutesnow = ((minutes - 20) % 60);
             if (minutesnow < 10) {
                 if (hoursnow < 13) {
                     message.channel.sendMessage("the time is " + hoursnow + ":0" + minutesnow + "AM game right now");
@@ -80,14 +80,11 @@ bot.on('message', message => {
                     message.channel.sendMessage("the time is " + hoursnn + ":" + minutesnow + "PM game right now");
                 }
                 else if (hoursnow < 13) {
-                    message.channel.sendMessage("the time is " + hoursnow + ":0" + minutesnow + "AM game right now");
+                    message.channel.sendMessage("the time is " + hoursnow + ":" + minutesnow + "AM game right now");
                 }
             }
 
             break;
-
-
     }
 });
-
 bot.login(process.env.BOT_TOKEN);
