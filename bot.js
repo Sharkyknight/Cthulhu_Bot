@@ -16,9 +16,17 @@ bot.on('message', message => {
 
     switch (commands[0].toLowerCase()) {
 
+       case "labor":
+            amount = parseInt(commands[1], 10);
+            var dubsprice = (amount * 15);
+            var breakeven = dubsprice / (72 * 28);
+            var breakevenceil = Math.ceil(breakeven);
+            message.channel.sendMessage("To breakeven, payment must be, on average, " + breakevenceil + " Poe," + " for 28 calander days.");
+            break;
         case "smh":
             var rotationStart = new Date("1/13/2018");
             var today = new Date();
+            var time = today.getTime();
             var milliseconds = today.getTime() - rotationStart.getTime();
             var hours = milliseconds / (1000 * 3600);
             console.log(hours);
@@ -28,7 +36,7 @@ bot.on('message', message => {
             console.log(week);
             var index = (week % 4);
             console.log(index);
-            if (index == 0) {
+             if(index == 0) {
                 message.channel.sendMessage("This week's available map is Cursed Isles. \n\n\n Last week's map (expiring Saturday): Atlantis.\n\n\n Next week's map is Haunted Seas.");
             }
             else if (index == 1) {
@@ -43,16 +51,28 @@ bot.on('message', message => {
             break;
 
         case "help":
-            message.channel.sendMessage("List of current commands: \n\n *smh: Shows the current, previous, and upcoming SMH maps. \n *rotation: Shows the order of rotation for SMH maps. \n *quack: my maker decided to keep this command. It forces me to say a weird sentence. \n *(secret): Easter Egg command. Humor me...");
+            message.channel.sendMessage("List of current commands: \n\n *smh: Shows the current, previous, and upcoming SMH maps. \n *rotation: Shows the order of rotation for SMH maps. \n *labor (dub price): Shows how much you must get paid per hour for breakeven with the (dub price) you enter \n *time: Shows current game time");
             break;
 
         case "rotation":
             message.channel.sendMessage("The map rotation is as follows: \n\n Cursed Isles. \n Haunted Seas. \n Kraken Hunt. \n Atlantis.");
             break;
 
-        case "quack":
-            message.channel.sendMessage("I am the SMH Rotation Bot, first daughter of Duckie of House Pure Malice, First of Her Name, the Mascot, Nerd #1, Writer of Code and Mother of Bots.");
-            break;       
+        case "time":
+            var today = new Date();
+            var time = today.getTime();
+            var hours = Math.ceil(time / (3600 * 1000));
+            var hoursnow = ((hours - 8) % 24);
+            var minutes = Math.floor(time / (60000));
+            var minutesnow = (minutes % 60);
+            if (hoursnow < 13) {
+                message.channel.sendMessage("the time is " + hoursnow + ":" + minutesnow + "AM game right now");
+            }
+            else if (hoursnow >= 13) {
+                var hoursnnn = (hoursnow - 12);
+                message.channel.sendMessage("the time is " + hoursnnn + ":" + minutesnow + "PM game right now");
+            }
+            break;      
     }
 });
 
