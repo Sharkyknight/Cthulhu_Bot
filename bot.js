@@ -71,7 +71,7 @@ bot.on('message', message => {
                 }
                 else if (hoursnow >= 13) {
                     var hoursnnn = (hoursnow - 12);
-                    message.channel.sendMessage("the time is " + hoursnnn + ":" + minutesnow + "PM game right now");
+                    message.channel.sendMessage("the time is " + hoursnnn + ":0" + minutesnow + "PM game right now");
                 }
             }
             else if (minutesnow >= 10) {
