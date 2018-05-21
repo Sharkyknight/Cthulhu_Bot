@@ -65,14 +65,26 @@ bot.on('message', message => {
             var hoursnow = ((hours - 8) % 24);
             var minutes = Math.floor(time / (60000));
             var minutesnow = (minutes % 60);
-            if (hoursnow < 13) {
-                message.channel.sendMessage("the time is " + hoursnow + ":" + minutesnow + "AM game right now");
+            if (minutesnow < 10) {
+                if (hoursnow < 13) {
+                    message.channel.sendMessage("the time is " + hoursnow + ":0" + minutesnow + "AM game right now");
+                }
+                else if (hoursnow >= 13) {
+                    var hoursnnn = (hoursnow - 12);
+                    message.channel.sendMessage("the time is " + hoursnnn + ":" + minutesnow + "PM game right now");
+                }
             }
-            else if (hoursnow >= 13) {
-                var hoursnnn = (hoursnow - 12);
-                message.channel.sendMessage("the time is " + hoursnnn + ":" + minutesnow + "PM game right now");
+            else if (minutesnow >= 10) {
+                if (hoursnow >= 13) {
+                    var hoursnnn = (hoursnow - 12);
+                    message.channel.sendMessage("the time is " + hoursnnn + ":" + minutesnow + "PM game right now");
+                }
+                else if (hoursnow < 13) {
+                        message.channel.sendMessage("the time is " + hoursnow + ":0" + minutesnow + "AM game right now");
+                    }
+                }
             }
-            break;      
+            break;     
     }
 });
 
