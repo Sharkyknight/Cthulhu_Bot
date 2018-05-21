@@ -58,13 +58,13 @@ bot.on('message', message => {
             message.channel.sendMessage("The map rotation is as follows: \n\n Cursed Isles. \n Haunted Seas. \n Kraken Hunt. \n Atlantis.");
             break;
 
-        case "time":
+          case "time":
             var today = new Date();
             var time = today.getTime();
             var hours = Math.ceil(time / (3600 * 1000));
             var hoursnow = ((hours - 8) % 24);
             var minutes = Math.floor(time / (60000));
-            var minutesnow = (minutes % 60);
+            var minutesnow = ((minutes - 15) % 60);
             if (minutesnow < 10) {
                 if (hoursnow < 13) {
                     message.channel.sendMessage("the time is " + hoursnow + ":0" + minutesnow + "AM game right now");
@@ -76,16 +76,18 @@ bot.on('message', message => {
             }
             else if (minutesnow >= 10) {
                 if (hoursnow >= 13) {
-                    var hoursnnn = (hoursnow - 12);
-                    message.channel.sendMessage("the time is " + hoursnnn + ":" + minutesnow + "PM game right now");
+                    var hoursnn = (hoursnow - 12);
+                    message.channel.sendMessage("the time is " + hoursnn + ":" + minutesnow + "PM game right now");
                 }
                 else if (hoursnow < 13) {
-                        message.channel.sendMessage("the time is " + hoursnow + ":0" + minutesnow + "AM game right now");
-                    }
+                    message.channel.sendMessage("the time is " + hoursnow + ":0" + minutesnow + "AM game right now");
                 }
             }
-            break;     
+
+            break;
+
+
     }
-);
+});
 
 bot.login(process.env.BOT_TOKEN);
