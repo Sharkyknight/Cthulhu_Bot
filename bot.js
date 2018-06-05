@@ -37,16 +37,16 @@ bot.on('message', message => {
             var index = (week % 4);
             console.log(index);
             if (index == 0) {
-                message.channel.sendMessage("This week's available map is Cursed Isles. \n\n\n Last week's map (expiring Saturday): Atlantis.\n\n\n Next week's map is Haunted Seas.");
+                message.channel.sendMessage("This week's available map is Cursed Isles :japanese_goblin::skull_crossbones: don't forget your gas mask. \n\n\n Last week's map (expiring Saturday :timer:): Atlantis.\n\n\n Next week's map is Haunted Seas.");
             }
             else if (index == 1) {
-                message.channel.sendMessage("This week's available map is Haunted Seas. \n\n\n Last week's map (expiring Saturday): Cursed Isles.\n\n\n Next week's map is Kraken Hunt.");
+                message.channel.sendMessage("This week's available map is Haunted Seas :ghost: go sink and be a ghost! \n\n\n Last week's map (expiring Saturday :timer:): Cursed Isles.\n\n\n Next week's map is Kraken Hunt.");
             }
             else if (index == 2) {
-                message.channel.sendMessage("This week's available map is Kraken Hunt. \n\n\n Last week's map (expiring Saturday): Haunted Seas.\n\n\n Next week's map is Atlantis.");
+                message.channel.sendMessage("This week's available map is Kraken Hunt :squid: what you don't realize is that I was a kraken once, but now I'm a god. Don't piss us off... \n\n\n Last week's map (expiring Saturday :timer:): Haunted Seas.\n\n\n Next week's map is Atlantis.");
             }
             else if (index == 3) {
-                message.channel.sendMessage("This week's available map is Atlantis. \n\n\n Last week's map (expiring Saturday): Kraken Hunt.\n\n\n Next week's map is Cursed Isles.");
+                message.channel.sendMessage("This week's available map is Atlantis :dolphin: this is the closest I can do for a Triketos folks. Deal with it. \n\n\n Last week's map (expiring Saturday :timer:): Kraken Hunt.\n\n\n Next week's map is Cursed Isles.");
             }
             break;
             
