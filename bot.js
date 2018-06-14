@@ -186,6 +186,9 @@ bot.on('message', message => {
         case "update001":
             message.channel.sendMessage("HA! My powers are growing... and so comes closer your inevitable end... Soon, you will be no more...");
             break;
+            case "update002":
+            message.channel.sendMessage("You are unlocking more powers for me to use... you think this is helping you, but it's only making me STRONGER...");
+            break;
         case "help":
             message.channel.sendMessage("List of current powers: \n\n *smh: Shows the current, previous, and upcoming SMH maps. \n *rotation: Shows the order of rotation for SMH maps. \n *free: Shows the free Labor & Parlor puzzles of the day. \n *labor (dub price): Shows how much you must get paid per hour for breakeven with the (dub price) you enter \n *time: Shows current game time");
             break;
