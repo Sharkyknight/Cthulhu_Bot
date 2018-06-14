@@ -51,7 +51,45 @@ bot.on('message', message => {
         case "introduction":
                  message.channel.sendMessage("Behold the rise of the ancient one. A pirate's worst nightmare has arrived. A half octopus, half dragon, man-like sea monster is what I am. If it wasn't for the curse of which Sharkyknight has sealed me with, you would've been taking your last breaths... As an ancient being, I have different powers of which I can use. You may access the list using *help. Of course, my powers will gradually grow, adding more to what I can do... until the seal breaks... then... it will not matter to which god you pray, as the end is then inevitable...");
             break;
-
+        case "free":
+            var start_date = new Date("6/3/2018");
+            var today_date = new Date();
+            var milliseconds_since = today_date.getTime() - start_date.getTime();
+            var hours_since = (milliseconds_since / (1000 * 3600));
+            console.log(hours_since);
+            var days_since = (Math.floor((hours_since-8) / 24));
+            console.log(days_since);
+            var day = (days_since % 7);
+            console.log(day);
+            if (day == 0) {
+                message.channel.sendMessage("The free Labor puzzle today is Blacksmithing.");
+                message.channel.sendMessage("The free Parlor puzzles today are Drinking and poker.");
+            }
+            else if (day == 1) {
+                message.channel.sendMessage("The free Labor puzzle today is Weaving.");
+                message.channel.sendMessage("The free Parlor puzzles today are Swordfighting, Rumble, and Spades.");
+            }
+            else if (day == 2) {
+                message.channel.sendMessage("The free Labor puzzle today is Foraging. You can do the puzzle if you ask someone to job you one the NB even with no badge.");
+                message.channel.sendMessage("The free Parlor puzzles today are Treasure Drop and Hearts.");
+            }
+            else if (day == 3) {
+                message.channel.sendMessage("The free Labor puzzle today is Alchemistry.");
+                message.channel.sendMessage("The free Parlor puzzles today are Drinking and Hearts.");
+            }
+            else if (day == 4) {
+                message.channel.sendMessage("There is no free Labor puzzle today.");
+                message.channel.sendMessage("The free Parlor puzzles today are Swordfighting, Rumble, and Spades.");
+            }
+            else if (day == 5) {
+                message.channel.sendMessage("The free Labor puzzle today is Distilling.");
+                message.channel.sendMessage("The free Parlor puzzles today are Treasure drop and Poker.");
+            }
+            else if (day == 6) {
+                message.channel.sendMessage("The free Labor puzzle today is Shipwrightery.");
+                message.channel.sendMessage("The free Parlor puzzles today are Swordfighting and Rumble.");
+            }
+            break;
         case "help":
             message.channel.sendMessage("List of current powers: \n\n *smh: Shows the current, previous, and upcoming SMH maps. \n *rotation: Shows the order of rotation for SMH maps. \n *labor (dub price): Shows how much you must get paid per hour for breakeven with the (dub price) you enter \n *time: Shows current game time");
             break;
