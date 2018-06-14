@@ -29,7 +29,7 @@ bot.on('message', message => {
             var milliseconds_since = today_date.getTime() - rotation_Start.getTime();
             var hours_since = milliseconds_since / (1000 * 3600);
             console.log(hours_since);
-            var days_since = ((hours_since - 8) / 24); // do (hours - 8) since GMT --> PST. You screwed up...
+            var days_since = ((hours_since - 7) / 24); // do (hours - 8) since GMT --> PST. You screwed up...
             console.log(days_since);
             var week_since = Math.floor(days_since / 7)
             console.log(week_since);
@@ -57,7 +57,7 @@ bot.on('message', message => {
             var milliseconds_since = today_date.getTime() - start_date.getTime();
             var hours_since = (milliseconds_since / (1000 * 3600));
             console.log(hours_since);
-            var days_since = (Math.floor((hours_since - 4) / 24));
+            var days_since = (Math.floor((hours_since - 7) / 24));
             console.log(days_since);
             var day = (days_since % 7);
             console.log(day);
@@ -91,7 +91,7 @@ bot.on('message', message => {
             }
             break;
         case "help":
-            message.channel.sendMessage("List of current powers: \n\n *smh: Shows the current, previous, and upcoming SMH maps. \n *rotation: Shows the order of rotation for SMH maps. \n *labor (dub price): Shows how much you must get paid per hour for breakeven with the (dub price) you enter \n *time: Shows current game time");
+            message.channel.sendMessage("List of current powers: \n\n *smh: Shows the current, previous, and upcoming SMH maps. \n *rotation: Shows the order of rotation for SMH maps. \n *free: Shows the free Labor & Parlor puzzles of the day. \n *labor (dub price): Shows how much you must get paid per hour for breakeven with the (dub price) you enter \n *time: Shows current game time");
             break;
 
         case "rotation":
