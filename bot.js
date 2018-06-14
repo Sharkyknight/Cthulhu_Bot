@@ -90,6 +90,9 @@ bot.on('message', message => {
                 message.channel.sendMessage("The free Parlor puzzles today are Swordfighting and Rumble.");
             }
             break;
+        case "update001":
+            message.channel.sendMessage("HA! My powers are growing... and so comes closer the inevitable inevitable... Soon, you will be no more...");
+            break;
         case "help":
             message.channel.sendMessage("List of current powers: \n\n *smh: Shows the current, previous, and upcoming SMH maps. \n *rotation: Shows the order of rotation for SMH maps. \n *free: Shows the free Labor & Parlor puzzles of the day. \n *labor (dub price): Shows how much you must get paid per hour for breakeven with the (dub price) you enter \n *time: Shows current game time");
             break;
