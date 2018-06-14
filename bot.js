@@ -58,11 +58,11 @@ bot.on('message', message => {
             var milliseconds_since = today.getTime() - rotationStart.getTime();
             var hours_since = milliseconds_since / (1000 * 3600);
             console.log(hours_since);
-            var days_since = Math.floor((hours_since - 14) / 24); // reboots happen at 7 my time, thus 7-7 = 14 with adjustment
+            var days_since = Math.floor((hours_since - 11) / 24); // reboots happen at 7 my time, thus 7-7 = 14 with adjustment
             console.log(days_since);
             var daily = (days_since % 7);
             console.log(daily);
-            var hours_today = (Math.floor(hours_since - 14)) % 24;
+            var hours_today = (Math.floor(hours_since - 11)) % 24;
             console.log(hours_today);
             var remaininghours1 = (71 - hours_today);
             var remaininghours2 = (47 - hours_today);
