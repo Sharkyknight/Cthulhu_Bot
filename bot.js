@@ -51,6 +51,54 @@ bot.on('message', message => {
         case "introduction001":
                  message.channel.sendMessage("Behold the rise of the ancient one. A pirate's worst nightmare has arrived. A half octopus, half dragon, man-like sea monster is what I am. If it wasn't for the curse of which Sharkyknight has sealed me with, you would've been taking your last breaths... As an ancient being, I have different powers of which I can use. You may access the list using *help. Of course, my powers will gradually grow, adding more to what I can do... until the seal breaks... then... it will not matter to which god you pray, as the end is then inevitable...");
             break;
+            case "reboot":
+            var rotationStart = new Date("6/2/2018");
+            var today = new Date();
+            var time = today.getTime();
+            var milliseconds_since = today.getTime() - rotationStart.getTime();
+            var hours_since = milliseconds_since / (1000 * 3600);
+            console.log(hours_since);
+            var days_since = Math.floor((hours_since - 14) / 24); // reboots happen at 7 my time, thus 7-7 = 14 with adjustment
+            console.log(days_since);
+            var daily = (days_since % 7);
+            console.log(daily);
+            var hours_today = (Math.floor(hours_since - 14)) % 24;
+            console.log(hours_today);
+            var remaininghours1 = (71 - hours_today);
+            var remaininghours2 = (47 - hours_today);
+            var remaininghours3 = (23 - hours_today);
+            var minutes = Math.floor(time / (60000));
+            var minutes_now = ((minutes) % 60);
+            var minutes_remaining = (60 - minutes_now);
+            if (daily == 0) {
+                message.channel.sendMessage("The next purge will be in " + remaininghours2 + "h " + minutes_remaining + "m. Prepare yourselves!");
+                message.channel.sendMessage("Scheduled purges occur every Monday, Thursday, and Friday, at 4AM game time. Your end is inevitable!");
+            }
+            else if (daily == 1) {
+                message.channel.sendMessage("The next purge will be in " + remaininghours3 + "h " + minutes_remaining + "m. Prepare yourselves!");
+                message.channel.sendMessage("Scheduled purges occur every Monday, Thursday, and Friday, at 4AM game time. Your end is inevitable!");
+            }
+            else if (daily == 2) {
+                message.channel.sendMessage("The next purge will be in " + remaininghours1 + "h " + minutes_remaining + "m. Prepare yourselves!");
+                message.channel.sendMessage("Scheduled purges occur every Monday, Thursday, and Friday, at 4AM game time. Your end is inevitable!");
+            }
+            else if (daily == 3) {
+                message.channel.sendMessage("The next purge will be in " + remaininghours2 + "h " + minutes_remaining + "m. Prepare yourselves!");
+                message.channel.sendMessage("Scheduled purges occur every Monday, Thursday, and Friday, at 4AM game time. Your end is inevitable!");
+            }
+            else if (daily == 4) {
+                message.channel.sendMessage("The next purge will be in " + remaininghours3 + "h " + minutes_remaining + "m. Prepare yourselves!");
+                message.channel.sendMessage("Scheduled purges occur every Monday, Thursday, and Friday, at 4AM game time. Your end is inevitable!");
+            }
+            else if (daily == 5) {
+                message.channel.sendMessage("The next purge will be in " + remaininghours3 + "h " + minutes_remaining + "m. Prepare yourselves!");
+                message.channel.sendMessage("Scheduled purges occur every Monday, Thursday, and Friday, at 4AM game time. Your end is inevitable!");
+            }
+            else if (daily == 6) {
+                message.channel.sendMessage("The next purge will be in " + remaininghours1 + "h " + minutes_remaining + "m. Prepare yourselves!");
+                message.channel.sendMessage("Scheduled purges occur every Monday, Thursday, and Friday, at 4AM game time. Your end is inevitable!");
+            }
+            break;
         case "free":
             var start_date = new Date("6/3/2018");
             var today_date = new Date();
