@@ -57,7 +57,7 @@ bot.on('message', message => {
             var milliseconds_since = today_date.getTime() - start_date.getTime();
             var hours_since = (milliseconds_since / (1000 * 3600));
             console.log(hours_since);
-            var days_since = (Math.floor((hours_since-8) / 24));
+            var days_since = (Math.floor((hours_since-5) / 24));
             console.log(days_since);
             var day = (days_since % 7);
             console.log(day);
