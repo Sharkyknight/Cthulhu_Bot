@@ -185,7 +185,10 @@ bot.on('message', message => {
             break;
         case "comment001":
              message.channel.sendMessage("oooh... I'm very interested in this. Such a nice image of these naive pirates going against us. A truly pitiful end.");
-            break;                             
+            break; 
+          case "comment002":
+             message.channel.sendMessage("...");
+            break;  
         case "update001":
             message.channel.sendMessage("HA! My powers are growing... and so comes closer your inevitable end... Soon, you will be no more...");
             break;
