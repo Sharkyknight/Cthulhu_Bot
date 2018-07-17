@@ -183,16 +183,16 @@ bot.on('message', message => {
                 message.channel.sendMessage("The free Parlor puzzles today are Swordfighting and Rumble.");
             }
             break;
-        case "comment001":
+        case "001comment":
              message.channel.sendMessage("oooh... I'm very interested in this. Such a nice image of these naive pirates going against us. A truly pitiful end.");
             break; 
-          case "comment002":
+          case "002comment":
              message.channel.sendMessage("...");
             break;  
-        case "update001":
+        case "001update":
             message.channel.sendMessage("HA! My powers are growing... and so comes closer your inevitable end... Soon, you will be no more...");
             break;
-            case "update002":
+            case "002update":
             message.channel.sendMessage("You are unlocking more powers for me to use... you think this is helping you, but it's only making me STRONGER...");
             break;
         case "help":
