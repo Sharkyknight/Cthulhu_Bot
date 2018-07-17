@@ -183,6 +183,9 @@ bot.on('message', message => {
                 message.channel.sendMessage("The free Parlor puzzles today are Swordfighting and Rumble.");
             }
             break;
+        case "comment001":
+             message.channel.sendMessage("oooh... I'm very interested in this. Such a nice image of these naive pirates going against us. A truly pitiful end.");
+            break;                             
         case "update001":
             message.channel.sendMessage("HA! My powers are growing... and so comes closer your inevitable end... Soon, you will be no more...");
             break;
