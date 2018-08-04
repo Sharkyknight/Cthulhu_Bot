@@ -195,6 +195,9 @@ bot.on('message', message => {
             case "003comment":
              message.channel.sendMessage("what a useless command.");
             break;  
+             case "004comment":
+             message.channel.sendMessage("So. Very. USELESS.");
+            break;
         case "001update":
             message.channel.sendMessage("HA! My powers are growing... and so comes closer your inevitable end... Soon, you will be no more...");
             break;
