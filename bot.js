@@ -144,6 +144,9 @@ bot.on('message', message => {
                 }
             }
             break;
+        case "sharky":
+             message.channel.sendMessage(":shark::shark::shark:");
+            break;
         case "free":
             var start_date = new Date("6/3/2018");
             var today_date = new Date();
