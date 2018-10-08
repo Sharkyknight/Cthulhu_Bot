@@ -13,7 +13,10 @@ if (!message.content.startsWith(PREFIX)) {
     return;
 }
 var commands = message.content.substring(PREFIX.length).split(" ");
+var poemList = require("./poems.json");
+    
 user1 = "Sharkyknight";
+    
 switch (commands[0].toLowerCase()) {
 
 
@@ -44,6 +47,10 @@ switch (commands[0].toLowerCase()) {
          else {
             message.channel.sendMessage("You are not worthy of my time, mortal...")
         }
+        break;
+    // Poems
+    case "poem":
+        message.channel.sendMessage(poemList.poem[0]);
         break;
     case "wasa":
       message.channel.sendMessage("Buster, Sparkle, Newbie, Speedy \nand then there's Wasa our smallest kitty, \nOne, two, three and four and five, \nthey're so frisky, so alive.");
