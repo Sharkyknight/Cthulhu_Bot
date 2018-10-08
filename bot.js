@@ -69,6 +69,9 @@ switch (commands[0].toLowerCase()) {
     case "alerik":
         message.channel.sendMessage("Alerik is always right\nGet used to it.");
         break;
+        case "Carso":
+         message.channel.sendMessage("A writer ofrpoems, she's now has been known \n as she writes her lines, everyone is with her love is blown\n We love all love Carso, from words or from actions shown \n We are lucky to have her, a truly beautiful gemstone")
+        break;
     case "fran":
         message.channel.sendMessage("Alerik Loves Fran");
         break;
