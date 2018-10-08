@@ -55,7 +55,7 @@ switch (commands[0].toLowerCase()) {
         message.channel.sendMessage("Roses are red\nSugar is sweet\nEyad's boots too big\nFor he goddamn feet");
         break;
     case "alerik":
-        message.channel.sendMessage("hi Alerik ilu");
+        message.channel.sendMessage("Roses are nice\nViolets are fine\nI'll be the six\nIf Alerik'll be the nine");
         break;
     case "fran":
         message.channel.sendMessage("Alerik Loves Fran");
