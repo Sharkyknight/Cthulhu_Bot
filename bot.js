@@ -45,6 +45,9 @@ switch (commands[0].toLowerCase()) {
             message.channel.sendMessage("You are not worthy of my time, mortal...")
         }
         break;
+    case "carso":
+        message.channel.sendMessage("Testing");
+        break;
     case "wasa":
       message.channel.sendMessage("Buster, Sparkle, Newbie, Speedy \n and then there's Wasa our smallest kitty, \n One, two, three and four and five, \n they're so frisky, so alive.");
         break;
