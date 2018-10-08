@@ -1,6 +1,8 @@
 {
   "poem" : [
     "{0}'s life has been the poem I would have writ\nBut I could not both live and utter it",
-    "Lavender's blue\nEmerald's green\ncommand[1] is the queen\nYes, {0} is the queen"
+    "Lavender's blue\nEmerald's green\n{0} is the queen\nYes, {0} is the queen",
+    "I love {0},\n{0} loves me.\nHow we met\nis a mystery.",
+    "Buster, Sparkle, Newbie, Speedy\nand then there's {0}, our smallest kitty.\nOne, two, three and four and five,\nthey're so frisky, so alive."
   ]
 }
