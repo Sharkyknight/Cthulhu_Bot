@@ -30,7 +30,7 @@ switch (commands[0].toLowerCase()) {
 
     // Comments
     case "alerik":
-         message.channel.sendMessage("Piss off mate")
+         message.channel.sendMessage("_Cthulhu eats Alerik_")
         break;
     case "001comment":
         if (message.author.username == user1) {
