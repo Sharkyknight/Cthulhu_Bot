@@ -51,7 +51,7 @@ switch (commands[0].toLowerCase()) {
     // Poems
     case "poem":
         var rng = 1;                                                  // Random poem number
-        var poem = poemList.poem[rng].replace("{0}, commands[1]);     // Select poem, insert command
+        var poem = poemList.poem[rng].replace("{0}", commands[1]);     // Select poem, insert command
         message.channel.sendMessage(poem);
         break;
     case "wasa":
