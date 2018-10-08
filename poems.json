@@ -1,6 +1,6 @@
 {
   "poem" : [
-    "command[1]'s life has been the poem I would have writ\nBut I could not both live and utter it",
+    command[1] + "'s life has been the poem I would have writ\nBut I could not both live and utter it",
     "Lavender's blue\nEmerald's green\ncommand[1] is the queen\nYes, command[1] is the queen"
   ]
 }
