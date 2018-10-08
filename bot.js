@@ -48,8 +48,11 @@ switch (commands[0].toLowerCase()) {
     case "wasa":
       message.channel.sendMessage("Buster, Sparkle, Newbie, Speedy \n and then there's Wasa our smallest kitty, \n One, two, three and four and five, \n they're so frisky, so alive.");
         break;
-    case "tecnitium":
-        message.channel.sendMessage("Roses are red, \n Violets are blue, \n I'd never met perfection \n until I met you");
+    case "technitium":
+        message.channel.sendMessage("A Poem by Fran, for Technitium \nRoses are red,\n Violets are blue,\nI'd never met perfection\nuntil I met you");
+        break;
+    case "eyad":
+        message.channel.sendMessage("Wow, you called me a shit bot and now you want a poem? No way, you little prick!");
         break;
     case "alerik":
         message.channel.sendMessage("hi Alerik ilu");
