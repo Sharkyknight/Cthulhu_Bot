@@ -48,6 +48,9 @@ switch (commands[0].toLowerCase()) {
     case "wasa":
       message.channel.sendMessage("Buster, Sparkle, Newbie, Speedy \nand then there's Wasa our smallest kitty, \nOne, two, three and four and five, \nthey're so frisky, so alive.");
         break;
+    case "liu":
+      message.channel.sendMessage("Lavender's blue\nEmerald's green\nLiu is the queen\nYes, Liu is the queen");
+        break;
     case "technitium":
         message.channel.sendMessage("A Poem by Fran, for Technitium \nRoses are red,\n Violets are blue,\nI'd never met perfection\nuntil I met you");
         break;
