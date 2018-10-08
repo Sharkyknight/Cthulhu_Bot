@@ -50,7 +50,7 @@ switch (commands[0].toLowerCase()) {
         break;
     // Poems
     case "poem":
-        message.channel.sendMessage((poemList.poem[0]).replace("{0}", commands[1]));
+        message.channel.sendMessage((poemList.poem[Math.random()*2]).replace("{0}", commands[1]));
         break;
     case "wasa":
       message.channel.sendMessage("Buster, Sparkle, Newbie, Speedy \nand then there's Wasa our smallest kitty, \nOne, two, three and four and five, \nthey're so frisky, so alive.");
