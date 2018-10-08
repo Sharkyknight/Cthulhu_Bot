@@ -60,6 +60,12 @@ switch (commands[0].toLowerCase()) {
     case "fran":
         message.channel.sendMessage("Alerik Loves Fran");
         break;
+    case "julie":
+        message.channel.sendMessage("I love Julie\nJulie loves me\nHow we met\nIs a mystery");
+        break;
+    case "pastey":
+        message.channel.sendMessage("☆☾¯`·.¸¸.★ᴘ♥ᴀ♥s♥ᴛ♥ᴇ♥ʏ♥ᴍ♥ᴀ♥ɴ★.¸¸.·´¯☽☆\nYou're the type of person\nThat makes forever seem too short");
+        break;
     case "jojo":
       message.channel.sendMessage("Roses are red, \n Violets are blue, \n Sugar is sweet \n and Jojo is too.");
         break;
