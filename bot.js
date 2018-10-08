@@ -48,6 +48,15 @@ switch (commands[0].toLowerCase()) {
     case "wasa":
       message.channel.sendMessage("Buster, Sparkle, Newbie, Speedy \n and then there's Wasa our smallest kitty, \n One, two, three and four and five, \n they're so frisky, so alive.");
         break;
+    case "tecnitium":
+        message.channel.sendMessage("Roses are red, \n Violets are blue, \n I'd never met perfection \n until I met you");
+        break;
+    case "alerik":
+        message.channel.sendMessage("hi Alerik ilu");
+        break;
+    case "fran":
+        message.channel.sendMessage("Alerik Loves Fran");
+        break;
     case "jojo":
       message.channel.sendMessage("Roses are red, \n Violets are blue, \n Sugar is sweet \n and Jojo is too.");
         break;
