@@ -13,7 +13,7 @@ if (!message.content.startsWith(PREFIX)) {
     return;
 }
 var commands = message.content.substring(PREFIX.length).split(" ");
-user = "mrplantman";
+user = "Sharkyknight";
 switch (commands[0].toLowerCase()) {
 
 
