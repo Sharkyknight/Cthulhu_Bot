@@ -29,9 +29,6 @@ switch (commands[0].toLowerCase()) {
         break;
 
     // Comments
-    case "alerik":
-         message.channel.sendMessage("_Cthulhu eats Alerik_")
-        break;
     case "001comment":
         if (message.author.username == user1) {
             message.channel.sendMessage("oooh... I'm very interested in this. Such a nice image of these naive pirates going against us. A truly pitiful end.");
