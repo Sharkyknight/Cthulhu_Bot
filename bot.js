@@ -97,7 +97,7 @@ switch (commands[0].toLowerCase()) {
         message.channel.sendMessage("To breakeven, payment must be, on average, " + breakevenceil + " Poe," + " for 28 calander days.");
         }
         else {
-            message.channel.sendMessage("Invalid format. Please type the price of the dub after labour. Example: *labor 3000");
+            message.channel.sendMessage("Invalid format. Please type the price of the dub after labor. Example: *labor 3000");
         }
         break;
         case "smh":
