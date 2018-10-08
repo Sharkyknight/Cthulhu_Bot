@@ -48,6 +48,9 @@ switch (commands[0].toLowerCase()) {
     case "wasa":
       message.channel.sendMessage("Buster, Sparkle, Newbie, Speedy \nand then there's Wasa our smallest kitty, \nOne, two, three and four and five, \nthey're so frisky, so alive.");
         break;
+    case "fran":
+      message.channel.sendMessage("Fran's life has been the poem I would have writ\nBut I could not both live and utter it");
+        break;
     case "azy":
         message.channel.sendMessage("Azy, you should ask Fran to write you a poem.");
         break;
