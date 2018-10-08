@@ -52,7 +52,7 @@ switch (commands[0].toLowerCase()) {
     case "poem":
         var rng = (Math.random()*2);                                   // Random poem number
         var poem = poemList.poem[rng].replace("{0}", commands[1]);     // Select poem, insert command
-        message.channel.sendMessage(poem);
+        message.channel.sendMessage(rng);
         break;
     case "wasa":
       message.channel.sendMessage("Buster, Sparkle, Newbie, Speedy \nand then there's Wasa our smallest kitty, \nOne, two, three and four and five, \nthey're so frisky, so alive.");
