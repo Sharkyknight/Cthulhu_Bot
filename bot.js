@@ -90,14 +90,14 @@ switch (commands[0].toLowerCase()) {
 // Commands
     case "labor":
         amount = parseInt(commands[1], 10);
-        if (amount =< 0) {
-            message.channel.sendMessage("Invalid format. Please type the price of the dub after labour. Example: *labor 3000");
-        }
-        else {
+        if (amount > 0) {
         var dubsprice = (amount * 15);
         var breakeven = dubsprice / (72 * 28);
         var breakevenceil = Math.ceil(breakeven);
         message.channel.sendMessage("To breakeven, payment must be, on average, " + breakevenceil + " Poe," + " for 28 calander days.");
+        }
+        else {
+            message.channel.sendMessage("Invalid format. Please type the price of the dub after labour. Example: *labor 3000");
         }
         break;
         case "smh":
