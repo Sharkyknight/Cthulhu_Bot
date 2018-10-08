@@ -64,7 +64,7 @@ switch (commands[0].toLowerCase()) {
         message.channel.sendMessage("I love Julie\nJulie loves me\nHow we met\nIs a mystery");
         break;
     case "pastey":
-        message.channel.sendMessage("☆☾¯`·.¸¸.★ᴘ♥ᴀ♥s♥ᴛ♥ᴇ♥ʏ♥ᴍ♥ᴀ♥ɴ★.¸¸.·´¯☽☆\nYou're the type of person\nThat makes forever seem too short");
+        message.channel.sendMessage("You're the type of person\nThat makes forever seem too short");
         break;
     case "jojo":
       message.channel.sendMessage("Roses are red, \n Violets are blue, \n Sugar is sweet \n and Jojo is too.");
