@@ -29,13 +29,13 @@ function randomDialogue(obj, name){
         return("Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn.");
     }
     else {
-        var num = Object.keys(dialogues.poem).length;                  // Total num of dialogues available
+        var num = Object.keys(obj).length;                  // Total num of dialogues available
         var rng = Math.floor(Math.random()*num);
-        var dialog = dialogues.poem[rng];
+        var dialog = obj[rng];
         while (dialog.includes("{0}")){                     // insert name into poem
             dialog = dialog.replace("{0}", name);
         }
-        return "dialog";
+        return dialog;
     }
 }
     
