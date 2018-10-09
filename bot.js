@@ -101,21 +101,19 @@ bot.on('message', message => {
             while (day != 1 && day != 3 && day != 5){  // Reboots happen on Mondays, Wednesdays & Thursdays.
                 rDate.setDate(rDate.getDate()+1);       // Increment until reboot day
             }
-            message.channel.sendMessage("Test..");
             /* Get difference between current time and reboot time */
-            //message.channel.sendMessage("G");
-            //var seconds = Math.abs(rDate - cDate) / 1000;
-            //var days = Math.floor(seconds/86400);       // days left until reboot
-            //seconds -= (days * 86400);
-            //var hours = Math.floor(seconds/3600) % 24;  // hours left until reboot
-            //seconds -= hours*3600;
-            //var minutes = Math.floor(seconds/60) % 60;  // minutes left until reboot
-            //seconds -= minutes*60;
-            //message.channel.sendMessage("H");
+            var seconds = Math.abs(rDate - cDate) / 1000;
+            var days = Math.floor(seconds/86400);       // days left until reboot
+            seconds -= (days * 86400);
+            var hours = Math.floor(seconds/3600) % 24;  // hours left until reboot
+            seconds -= hours*3600;
+            var minutes = Math.floor(seconds/60) % 60;  // minutes left until reboot
+            seconds -= minutes*60;
             /* Put time remaining into a string */
             //var timeStr = "" + days + "d " hours + "h " + minutes + "m";
             //var msg = messages.rebootA.replace("{0}", timeStr);
             //message.channel.sendMessage(msg);
+            message.channel.sendMessage("Test2..");
             message.channel.sendMessage(messages.rebootB);
             break;
         case "free":
