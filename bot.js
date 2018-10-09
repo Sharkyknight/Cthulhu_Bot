@@ -260,12 +260,12 @@ bot.on('message', message => {
             message.channel.sendMessage("The free Parlor puzzles today are Swordfighting and Rumble.");
         }
         break;
-    case "rotation":
-        message.channel.sendMessage("The map rotation is as follows: \n\n Cursed Isles. \n Haunted Seas. \n Kraken Hunt. \n Atlantis.");
-        break;
-    case "help":
-        message.channel.sendMessage("List of current powers: \n\n *smh: Shows the current, previous, and upcoming SMH maps. \n *rotation: Shows the order of rotation for SMH maps. \n *reboot: Shows when the next ingame scheduled reboot is going to occur. \n *free: Shows the free Labor & Parlor puzzles of the day. \n *labor (dub price): Shows how much you must get paid per hour for breakeven with the (dub price) you enter \n *time: Shows current game time");
-        break;
+        case "rotation":
+            message.channel.sendMessage(messages.rotation);
+            break;
+        case "help":
+            message.channel.sendMessage(messages.help);
+            break;
         
         // Dialogues
         case "poem":
