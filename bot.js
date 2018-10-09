@@ -50,7 +50,7 @@ switch (commands[0].toLowerCase()) {
         break;
     // Poems
     case "poem":
-        if (commands[1] === "undefined") {                         // no user listed, give Cthulhu poem
+        if (typeof commands[1] === "undefined") {                         // no user listed, give Cthulhu poem
             message.channel.sendMessage("Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn.");
             break;
         }
