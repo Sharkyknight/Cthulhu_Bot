@@ -5,39 +5,52 @@ const PREFIX = "*";
 var bot = new Discord.Client();
 
 bot.on('ready', () => {
-console.log(`Ready!`);
+    console.log(`Ready!`);
 });
 
 bot.on('message', message => {
-if (!message.content.startsWith(PREFIX)) {
-    return;
-}
-var commands = message.content.substring(PREFIX.length).split(" ");
-var dialogues = require("./dialogues.json");
-    
-user1 = "Sharkyknight";
-    
-/**
-* Parameters
-*   obj: JSON object where all values are strings
-*   name: the name of the person to be inserted into the dialogue
-* Return
-*   Randomly selected value within obj, where all {0}s are replaced with name
-*/
-function randomDialogue(obj, name){
-    if (typeof name === "undefined" || !obj || obj == "null" || obj === "undefined") {    // Parameters incorrect
-        return("Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn.");
+    if (!message.content.startsWith(PREFIX)) {
+        return;
     }
-    else {
-        var num = Object.keys(obj).length;                  // Total num of dialogues available
-        var rng = Math.floor(Math.random()*num);
-        var dialog = obj[rng];
-        while (dialog.includes("{0}")){                     // insert name into poem
-            dialog = dialog.replace("{0}", name);
+    
+    var commands = message.content.substring(PREFIX.length).split(" ");
+    var dialogues = require("./dialogues.json");
+    var messages = require("./messages.json");
+    
+    user1 = "Sharkyknight";
+    
+    /**
+    * Parameters
+    *   obj: JSON object where all values are strings
+    *   name: the name of the person to be inserted into the dialogue
+    * Return
+    *   Randomly selected value within obj, where all {0}s are replaced with name
+    */
+    function randomDialogue(obj, name){
+        if (typeof name === "undefined" || !obj || obj == "null" || obj === "undefined") {    // Parameters incorrect
+            return("Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn.");
         }
-        return dialog;
+        else {
+            var num = Object.keys(obj).length;                  // Total num of dialogues available
+            var rng = Math.floor(Math.random()*num);
+            var dialog = obj[rng];
+            while (dialog.includes("{0}")){                     // insert name into poem
+                dialog = dialog.replace("{0}", name);
+            }
+            return dialog;
+        }
     }
-}
+    
+    /**
+    * Parmeters
+    *   d1: Start date
+    *   d2: End date
+    * Return
+    *   Number of weeks between start and end date
+    */
+    function weeksBetween(d1, d2) {
+        return Math.floor((d2 - d1) / (7 * 24 * 60 * 60 * 1000));
+    }
     
 switch (commands[0].toLowerCase()) {
     // Comments
