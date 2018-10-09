@@ -67,45 +67,26 @@ bot.on('message', message => {
         }
         break;
         case "smh":
-        var rotation_Start = new Date("6/2/2018");
-        var today_date = new Date();
-        var milliseconds_since = today_date.getTime() - rotation_Start.getTime();
-        var hours_since = milliseconds_since / (1000 * 3600);
-        console.log(hours_since);
-        var days_since = ((hours_since - 7) / 24); // do (hours - 8) since GMT --> PST. You screwed up...
-        console.log(days_since);
-        var week_since = Math.floor(days_since / 7)
-        console.log(week_since);
-        var rotation_week = (week_since % 4);
-        console.log(rotation_week);
-        if (rotation_week == 0) {
-            message.channel.sendMessage("This week's available map is Cursed Isles :japanese_goblin::skull_crossbones: don't forget your gas mask. \n\n\n Last week's map (expiring Saturday :timer:): Atlantis.\n\n\n Next week's map is Haunted Seas.");
-        }
-        else if (rotation_week == 1) {
-            message.channel.sendMessage("This week's available map is Haunted Seas :ghost: go sink and be a ghost! \n\n\n Last week's map (expiring Saturday :timer:): Cursed Isles.\n\n\n Next week's map is Kraken Hunt.");
-        }
-        else if (rotation_week == 2) {
-            message.channel.sendMessage("This week's available map is Kraken Hunt :squid: what you don't realize is that I was a kraken once, but now I'm a god. Don't piss us off... \n\n\n Last week's map (expiring Saturday :timer:): Haunted Seas.\n\n\n Next week's map is Atlantis.");
-        }
-        else if (rotation_week == 3) {
-            message.channel.sendMessage("This week's available map is Atlantis :dolphin: this is the closest I can do for a Triketos folks. Deal with it. \n\n\n Last week's map (expiring Saturday :timer:): Kraken Hunt.\n\n\n Next week's map is Cursed Isles.");
-        }
-        break;
+            var numWeeks = weeksBetween(new Date("6/2/2018"), new Date());
+            var rmndr = numWeeks % 4;
+            var msg = (rmndr == 0) ? messages.CI : (rmndr == 1) ? messages.HS : (rmndr == 2) ? messages.KH : messages.AT;
+            message.channel.sendMessage(msg);
+            break;
         case "time":
             var clock = new Date();
             if (clock.getHours < 8){            // Remove 8 hours from current time
                 var timern = clock.getHours();
-                message.channel.sendMessage(clock.toTimeString());
+                message.channel.sendMessage("A" + clock.toTimeString());
                 clock.setDate(clock.getDate-1);
-                message.channel.sendMessage(clock.toTimeString());
+                message.channel.sendMessage("B" + clock.toTimeString());
                 clock.setHours(clock.getHours()+(16+timern));
-                message.channel.sendMessage(clock.toTimeString());
+                message.channel.sendMessage("C" + clock.toTimeString());
             }
             else {
-                message.channel.sendMessage(clock.toTimeString());
+                message.channel.sendMessage("D" + clock.toTimeString());
                 clock.setHours(clock.getHours-8);
             }
-            message.channel.sendMessage(clock.toTimeString());
+            message.channel.sendMessage("E" + clock.toTimeString());
             var msg = messages.clock.replace("{0}", clock.toTimeString());
             message.channel.sendMessage(msg);
             break;
