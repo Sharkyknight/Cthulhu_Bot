@@ -107,7 +107,7 @@ bot.on('message', message => {
                 rDate.setDate(rDate.getDate()+1);
             }
             var day = rDate.getDay();
-            var date = r.getDate();
+            var date = rDate.getDate();
             while (day != 1 && day != 4 && day != 5){  // Reboots happen on Mondays, Thursdays & Fridays.
                 date++;
                 rDate.setDate(date);       // Increment until reboot day
