@@ -54,11 +54,17 @@ bot.on('message', message => {
     
     switch (commands[0].toLowerCase()) {
         // Commands
-        case "labor":       // Find required labour cost to cover badge cost
-            var amount = parseInt(commands[1], 10);
-            var breakeven = (amount > 0) ? Math.ceil(((amount * 15) / (72 * 28))) : 0;      // Calculate cost to break even; 0 if invalid
-            var laborMsg = (breakeven > 0) ? messages.labor.replace("{0}", breakeven) : messages.invalidLabor;
-            message.channel.sendMessage(laborMsg);
+        case "labor":
+            amount = parseInt(commands[1], 10);
+            if (amount > 0) {
+                var dubsprice = (amount * 15);
+                var breakeven = dubsprice / (72 * 28);
+                var breakevenceil = Math.ceil(breakeven);
+                message.channel.sendMessage("To breakeven, payment must be, on average, " + breakevenceil + " Poe," + " for 28 calander days.");
+            }
+            else {
+                message.channel.sendMessage("Invalid format. Please type the price of the dub after labor. Example: *labor 3000");
+            }
             break;
         case "smh":
             var numWeeks = weeksBetween(new Date("6/2/2018"), new Date());
