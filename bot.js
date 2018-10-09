@@ -108,7 +108,7 @@ switch (commands[0].toLowerCase()) {
 
     // Dialogues
     case "poem":
-        var poetry = randomDialogue(dialogues.poem, comamands[1]);
+        var poetry = randomDialogue(dialogues.poem, commands[1]);
         message.channel.sendMessage(poetry);
         break;
     case "iwnabeu":
