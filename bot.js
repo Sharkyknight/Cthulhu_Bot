@@ -282,7 +282,7 @@ switch (commands[0].toLowerCase()) {
         
         // Comments
         case "001comment":
-            var comment = (message.author.username == user1) ? messages001comment : messages.rejected;
+            var comment = (message.author.username == user1) ? messages.001comment : messages.rejected;
             message.channel.sendMessage(comment);
             break;
         case "002comment":
@@ -298,11 +298,11 @@ switch (commands[0].toLowerCase()) {
             message.channel.sendMessage(comment);
             break;
         case "001update":
-            var comment = (message.author.username == user1) ? messages.001update : messages.rejected;
+            var comment = (message.author.username == user1) ? messages.001upd : messages.rejected;
             message.channel.sendMessage(comment);
             break;
         case "002update":
-            var comment = (message.author.username == user1) ? messages.002update : messages.rejected;
+            var comment = (message.author.username == user1) ? messages.002upd : messages.rejected;
             message.channel.sendMessage(comment);
             break;
 
