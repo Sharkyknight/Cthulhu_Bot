@@ -40,6 +40,26 @@ bot.on('message', message => {
             return dialog;
         }
     }
+
+    /**
+    * Return
+    *   Returns a Date object set to YPP current time
+    */
+    function setTime(){
+        var clock = new Date();
+        if (clock.getHours < 8){            // Remove 8 hours from current time
+            var timern = clock.getHours();
+            var temp = clock.getDate()-1;
+            clock.setDate(temp);
+            temp = clock.getHours()+(17+timern);
+            clock.setHours(temp);
+        }
+        else {
+            var temp = clock.getHours() - 7;
+            clock.setHours(temp);
+        }
+        return clock;
+    }
     
     /**
     * Parmeters
@@ -67,24 +87,13 @@ bot.on('message', message => {
             message.channel.sendMessage(msg);
             break;
         case "time":
-            var clock = new Date();
-            if (clock.getHours < 8){            // Remove 8 hours from current time
-                var timern = clock.getHours();
-                var temp = clock.getDate()-1;
-                clock.setDate(temp);
-                temp = clock.getHours()+(17+timern);
-                clock.setHours(temp);
-            }
-            else {
-                var temp = clock.getHours() - 7;
-                clock.setHours(temp);
-            }
+            var clock = setTime();
             var msg = messages.clock.replace("{0}", clock.toTimeString());
             message.channel.sendMessage(msg);
             break;
         case "reboot":
-            var cDate = new Date(); // Current Date
-            var rDate = new Date(); // Next Reboot Date
+            var cDate = setTime(); // Current Date
+            var rDate = cDate(); // Next Reboot Date
             /* Set to next Reboot date & time */
             if (rDate.getMinutes() > 0){          // Reboot happens on the hour
                 rDate.setMinutes(0);
@@ -102,17 +111,13 @@ bot.on('message', message => {
                 rDate.setDate(rDate.getDate()+1);       // Increment until reboot day
             }
             /* Get difference between current time and reboot time */
-            //var timeStr = "";
             var seconds = Math.abs(rDate - cDate) / 1000;
             var hours = Math.floor(seconds/3600) % 24;  // hours left until reboot
             seconds -= hours*3600;
-            //timeStr = timeStr + hours.toString() + "h ";
             var minutes = Math.floor(seconds/60) % 60;  // minutes left until reboot
             seconds -= minutes*60;
-            //timeStr = timeStr + minutes.toString() + "m";
             /* Put time remaining into a string */
             var timeStr = "" + hours.toString() + "h " + minutes.toString() + "m";
-            message.channel.sendMessage("test6...");
             var msg = messages.rebootA.replace("{0}", timeStr);
             message.channel.sendMessage(msg);
             message.channel.sendMessage(messages.rebootB);
