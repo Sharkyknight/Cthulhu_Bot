@@ -160,7 +160,8 @@ bot.on('message', message => {
             var msg = messages.rebootA.replace("{0}", timeStr);
             message.channel.sendMessage(msg);
             message.channel.sendMessage(messages.rebootB);
-            break;        case "free":
+            break;
+        case "free":
             var date = new Date();
             var day = date.getDay();
             if (day == 0) { // Sunday
