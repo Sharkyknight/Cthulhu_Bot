@@ -92,43 +92,12 @@ bot.on('message', message => {
         }
         break;
         case "time":
-            var today = new Date();
-            var time_mili = today.getTime();
-            var hours_today = Math.floor(time_mili / (3600 * 1000));
-            var minutes_today = Math.floor(time_mili / (60 * 1000));
-            var hour_now = ((hours_today - 7) % 24); //fix this...
-            var hour_PM = (hour_now - 12);
-            var minutes_now = ((minutes_today) % 60);
-            if (minutes_now < 10) {
-                if (hour_now == 0) {
-                    message.channel.sendMessage("the time is 12:0" + minutes_now + "AM game time right now");
-                }
-                else if (hour_now < 12) {
-                    message.channel.sendMessage("the time is " + hour_now + ":0" + minutes_now + "AM game time right now");
-                }
-                else if (hour_now == 12) {
-                    message.channel.sendMessage("the time is 12:0" + minutes_now + "PM game time right now");
-                }
-                else if (hour_now > 12) {
-                    message.channel.sendMessage("the time is " + hour_PM + ":0" + minutes_now + "PM game time right now");
-                }
-            }
-            else if (minutes_now >= 10) {
-                if (hour_now == 0) {
-                    message.channel.sendMessage("the time is 12:" + minutes_now + "AM game time right now");
-                }
-                else if (hour_now < 12) {
-                    message.channel.sendMessage("the time is " + hour_now + ":" + minutes_now + "AM game time right now");
-                }
-                else if (hour_now == 12) {
-                    message.channel.sendMessage("the time is 12:" + minutes_now + "PM game time right now");
-                }
-                else if (hour_now > 12) {
-                    message.channel.sendMessage("the time is " + hour_PM + ":" + minutes_now + "PM game time right now");
-                }
-            }
+            var clock = new Date();
+            clock.setTime(clock.getHours-8);            // Remove 8 hours from current time
+            var msg = messages.clock.replace("{0}", clock.toTimeString());
+            message.channel.sendMessage(msg);
             break;
-    case "reboot":
+        case "reboot":
         var rotationStart = new Date("6/2/2018");
         var today = new Date();
         var time = today.getTime();
