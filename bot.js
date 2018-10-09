@@ -93,7 +93,7 @@ bot.on('message', message => {
             break;
         case "reboot":
             var cDate = setTime(); // Current Date
-            var rDate = cDate(); // Next Reboot Date
+            var rDate = setTime(); // Next Reboot Date
             /* Set to next Reboot date & time */
             if (rDate.getMinutes() > 0){          // Reboot happens on the hour
                 rDate.setMinutes(0);
