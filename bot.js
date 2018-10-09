@@ -40,17 +40,6 @@ function randomDialogue(obj, name){
 }
     
 switch (commands[0].toLowerCase()) {
-            // Introduction
-    case "001introduction":
-        if (message.author.username == user1) {
-            message.channel.sendMessage("Behold the rise of the ancient one. A pirate's worst nightmare has arrived. A half octopus, half dragon, man-like sea monster is what I am. If it wasn't for the curse of which BabyShark has sealed me with, you would've been taking your last breaths... As an ancient being, I have different powers of which I can use. You may access the list using *help. Of course, my powers will gradually grow, adding more to what I can do... until the seal breaks... then... it will not matter to which god you pray, as the end is then inevitable...");
-
-        }
-        else {
-            message.channel.sendMessage("You are not worthy of my time, mortal...")
-    }
-        break;
-        
     // Comments
     case "001comment":
         if (message.author.username == user1) {
@@ -327,9 +316,11 @@ switch (commands[0].toLowerCase()) {
         message.channel.sendMessage("List of current powers: \n\n *smh: Shows the current, previous, and upcoming SMH maps. \n *rotation: Shows the order of rotation for SMH maps. \n *reboot: Shows when the next ingame scheduled reboot is going to occur. \n *free: Shows the free Labor & Parlor puzzles of the day. \n *labor (dub price): Shows how much you must get paid per hour for breakeven with the (dub price) you enter \n *time: Shows current game time");
         break;
 
-
-
-            
+        // Introduction
+        case "001introduction":
+            var intro = (message.author.username == user1) ? messages.intro : messages.rejected;
+            message.channel.sendMessage(intro);
+            break;
     }
 });
 bot.login(process.env.BOT_TOKEN);
