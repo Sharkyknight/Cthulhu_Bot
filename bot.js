@@ -84,7 +84,8 @@ bot.on('message', message => {
             }
             else {
                 message.channel.sendMessage("D" + clock.toTimeString());
-                clock.setHours(clock.getHours-8);
+                var temp = clock.getHours - 8;
+                clock.setHours(temp);
             }
             message.channel.sendMessage("E" + clock.toTimeString());
             var msg = messages.clock.replace("{0}", clock.toTimeString());
