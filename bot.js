@@ -13,9 +13,31 @@ if (!message.content.startsWith(PREFIX)) {
     return;
 }
 var commands = message.content.substring(PREFIX.length).split(" ");
-var poemList = require("./poems.json");
+var dialogues = require("./dialogues.json");
     
 user1 = "Sharkyknight";
+    
+/**
+* Parameters
+*   obj: JSON object where all values are strings
+*   name: the name of the person to be inserted into the dialogue
+* Return
+*   Randomly selected value within obj, where all {0}s are replaced with name
+*/
+function randomDialogue(obj, name){
+    if (typeof name === "undefined" || !obj || obj == "null" || object == "undefined") {    // Parameters incorrect
+        return("Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn.");
+    }
+    else {
+        var num = Object.keys(obj).length;                  // Total num of dialogues available
+        var rng = Math.floor(Math.random()*num);
+        var dialog = obj[rng];
+        while (dialog.includes("{0}")){                     // insert name into poem
+            dialog = dialog.replace("{0}", name);
+        }
+        return dialog;
+    }
+}
     
 switch (commands[0].toLowerCase()) {
 
@@ -48,68 +70,7 @@ switch (commands[0].toLowerCase()) {
             message.channel.sendMessage("You are not worthy of my time, mortal...")
         }
         break;
-    // Poems
-    case "poem":
-        if (typeof commands[1] === "undefined") {                         // no user listed, give Cthulhu poem
-            message.channel.sendMessage("Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn.");
-            break;
-        }
-        else {
-            var listLength = Object.keys(poemList.poem).length;            // Number of poems available
-            var rng = Math.floor(Math.random()*listLength);                // Random poem number
-            var poetry = poemList.poem[rng];                               // Select poem
-            while (poetry.includes("{0}")){
-                poetry = poetry.replace("{0}", commands[1]);
-            }
-            message.channel.sendMessage(poetry);
-            break;
-        }
-    case "wasa":
-      message.channel.sendMessage("Buster, Sparkle, Newbie, Speedy \nand then there's Wasa our smallest kitty, \nOne, two, three and four and five, \nthey're so frisky, so alive.");
-        break;
-    case "fran":
-      message.channel.sendMessage("Fran's life has been the poem I would have writ\nBut I could not both live and utter it");
-        break;
-    case "azy":
-        message.channel.sendMessage("Azy, you should ask Fran to write you a poem.");
-        break;
-    case "velternal":
-        message.channel.sendMessage("Velternal, you should ask Fran to write you a poem.");
-        break;
-    case "tubby":
-        message.channel.sendMessage("Tubby, you should ask Fran to write you a poem.");
-        break;
-    case "liu":
-      message.channel.sendMessage("Lavender's blue\nEmerald's green\nLiu is the queen\nYes, Liu is the queen");
-        break;
-    case "technitium":
-        message.channel.sendMessage("A Poem by Fran, for Technitium \nRoses are red,\n Violets are blue,\nI'd never met perfection\nuntil I met you");
-        break;
-    case "eyad":
-        message.channel.sendMessage("Roses are red\nSugar is sweet\nEyad's boots too big\nFor he goddamn feet");
-        break;
-    case "alerik":
-        message.channel.sendMessage("Alerik is always right\nGet used to it.");
-        break;
-    case "fran":
-        message.channel.sendMessage("Alerik Loves Fran");
-        break;
-    case "julie":
-        message.channel.sendMessage("I love Julie\nJulie loves me\nHow we met\nIs a mystery");
-        break;
-    case "pastey":
-        message.channel.sendMessage("You're the type of person\nThat makes forever seem too short");
-        break;
-    case "ilovecarso":
-        message.channel.sendMessage("Carso loves you too <3");
-        break;
-    case "jojo":
-      message.channel.sendMessage("Roses are red, \nViolets are blue, \nSugar is sweet \nand Jojo is too.");
-        break;
-    case "iwnabeu":
-        message.channel.sendMessage("Iwnabeu is the best player of this game \n He deserves all the pride, deserves all the fame \n His stats are amazing, few written in bold \n He's so good at poker he wins even when folds \n\n He is a skillful man with a nice trophie collection \n In one word to describe him, it would be perfection \n He can beat others in SF even if he lags \n He's SO of his crew and the Prince of his flag \n \n His swordfighting skills are truly legendary \n Having his as opponent could be very scary \n He is so handsome that other guys are hating \n Guys want to be like him, girls want to date him \n \n He plays poker so good he hits millions in tables \n He plays so good he turns Ultimates into Ables \n There are 1001 reasons why Iwnabeu is the best \n He's a man we admire, a man we respect \n \n If he left puzzle pirates he's leave us in tears \n He's be ruling the game for more than 7 years \n He is experienced in piracy, doesn't care about crafting \n He plays so good he makes others think he's hacking \n \n I hope you like this and you read all these letters \n Thank you for being here, making the game better \n You have a good heart, just open it wide \n And let's get ready for another wild ride");
-        break;
-    case "003comment":
+   case "003comment":
         if (message.author.username == user1) {
             message.channel.sendMessage("what a useless command.");
         }
@@ -145,6 +106,15 @@ switch (commands[0].toLowerCase()) {
         message.channel.sendMessage(":shark::shark::shark:");
         break;
 
+    // Dialogues
+    case "poem":
+        var poetry = randomDialogue(dialogues.poem, comamands[1]);
+        message.channel.sendMessage(poetry);
+        break;
+    case "iwnabeu":
+        message.channel.sendMessage("Iwnabeu is the best player of this game \n He deserves all the pride, deserves all the fame \n His stats are amazing, few written in bold \n He's so good at poker he wins even when folds \n\n He is a skillful man with a nice trophie collection \n In one word to describe him, it would be perfection \n He can beat others in SF even if he lags \n He's SO of his crew and the Prince of his flag \n \n His swordfighting skills are truly legendary \n Having his as opponent could be very scary \n He is so handsome that other guys are hating \n Guys want to be like him, girls want to date him \n \n He plays poker so good he hits millions in tables \n He plays so good he turns Ultimates into Ables \n There are 1001 reasons why Iwnabeu is the best \n He's a man we admire, a man we respect \n \n If he left puzzle pirates he's leave us in tears \n He's be ruling the game for more than 7 years \n He is experienced in piracy, doesn't care about crafting \n He plays so good he makes others think he's hacking \n \n I hope you like this and you read all these letters \n Thank you for being here, making the game better \n You have a good heart, just open it wide \n And let's get ready for another wild ride");
+        break;
+        
 // Commands
     case "labor":
         amount = parseInt(commands[1], 10);
@@ -363,5 +333,7 @@ switch (commands[0].toLowerCase()) {
 
 
 }
+
+    
 });
 bot.login(process.env.BOT_TOKEN);
