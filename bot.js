@@ -53,20 +53,7 @@ bot.on('message', message => {
     }
     
 switch (commands[0].toLowerCase()) {
-    case "sharky":
-        message.channel.sendMessage(":shark::shark::shark:");
-        break;
-
-    // Dialogues
-    case "poem":
-        var poetry = randomDialogue(dialogues.poem, commands[1]);
-        message.channel.sendMessage(poetry);
-        break;
-    case "iwnabeu":
-        message.channel.sendMessage("Iwnabeu is the best player of this game \n He deserves all the pride, deserves all the fame \n His stats are amazing, few written in bold \n He's so good at poker he wins even when folds \n\n He is a skillful man with a nice trophie collection \n In one word to describe him, it would be perfection \n He can beat others in SF even if he lags \n He's SO of his crew and the Prince of his flag \n \n His swordfighting skills are truly legendary \n Having his as opponent could be very scary \n He is so handsome that other guys are hating \n Guys want to be like him, girls want to date him \n \n He plays poker so good he hits millions in tables \n He plays so good he turns Ultimates into Ables \n There are 1001 reasons why Iwnabeu is the best \n He's a man we admire, a man we respect \n \n If he left puzzle pirates he's leave us in tears \n He's be ruling the game for more than 7 years \n He is experienced in piracy, doesn't care about crafting \n He plays so good he makes others think he's hacking \n \n I hope you like this and you read all these letters \n Thank you for being here, making the game better \n You have a good heart, just open it wide \n And let's get ready for another wild ride");
-        break;
-        
-// Commands
+    // Commands
     case "labor":
         amount = parseInt(commands[1], 10);
         if (amount > 0) {
