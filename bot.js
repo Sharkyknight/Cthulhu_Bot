@@ -221,45 +221,38 @@ bot.on('message', message => {
             }
         }
         break;
-    case "free":
-        var start_date = new Date("6/3/2018");
-        var today_date = new Date();
-        var milliseconds_since = today_date.getTime() - start_date.getTime();
-        var hours_since = (milliseconds_since / (1000 * 3600));
-        console.log(hours_since);
-        var days_since = (Math.floor((hours_since - 7) / 24));
-        console.log(days_since);
-        var day = (days_since % 7);
-        console.log(day);
-        if (day == 0) {
-            message.channel.sendMessage("The free Labor puzzle today is Blacksmithing.");
-            message.channel.sendMessage("The free Parlor puzzles today are Drinking and poker.");
-        }
-        else if (day == 1) {
-            message.channel.sendMessage("The free Labor puzzle today is Weaving.");
-            message.channel.sendMessage("The free Parlor puzzles today are Swordfighting, Rumble, and Spades.");
-        }
-        else if (day == 2) {
-            message.channel.sendMessage("The free Labor puzzle today is Foraging. You can do the puzzle if you ask someone to job you one the NB even with no badge.");
-            message.channel.sendMessage("The free Parlor puzzles today are Treasure Drop and Hearts.");
-        }
-        else if (day == 3) {
-            message.channel.sendMessage("The free Labor puzzle today is Alchemistry.");
-            message.channel.sendMessage("The free Parlor puzzles today are Drinking and Hearts.");
-        }
-        else if (day == 4) {
-            message.channel.sendMessage("There is no free Labor puzzle today.");
-            message.channel.sendMessage("The free Parlor puzzles today are Swordfighting, Rumble, and Spades.");
-        }
-        else if (day == 5) {
-            message.channel.sendMessage("The free Labor puzzle today is Distilling.");
-            message.channel.sendMessage("The free Parlor puzzles today are Treasure drop and Poker.");
-        }
-        else if (day == 6) {
-            message.channel.sendMessage("The free Labor puzzle today is Shipwrightery.");
-            message.channel.sendMessage("The free Parlor puzzles today are Swordfighting and Rumble.");
-        }
-        break;
+        case "free":
+            var date = new Date();
+            var day = date.getDay();
+            if (day == 0) { // Sunday
+                message.channel.sendMessage(messages.blacksmith);
+                message.channel.sendMessage(messages.drinkpoker);
+            }
+            else if (day == 1) {    // Monday
+                message.channel.sendMessage(messages.weave);
+                message.channel.sendMessage(messages.sfrumspades);
+            }
+            else if (day == 2) {    // Tuesday
+                message.channel.sendMessage(messages.forage);
+                message.channel.sendMessage(messages.tdhearts);
+            }
+            else if (day == 3) {    // Wednesday
+                message.channel.sendMessage(messages.alchem);
+                message.channel.sendMessage(messages.drinkhearts);
+            }
+            else if (day == 4) {    // Thursday
+                message.channel.sendMessage(messages.nolabor);
+                message.channel.sendMessage(messages.sfrumspades);
+            }
+            else if (day == 5) {    // Friday
+                message.channel.sendMessage(messages.distill);
+                message.channel.sendMessage(messages.tdpoker);
+            }
+            else {  // Saturday
+                message.channel.sendMessage(messages.swipwright);
+                message.channel.sendMessage(messages.sfrum);
+            }
+            break;
         case "rotation":
             message.channel.sendMessage(messages.rotation);
             break;
