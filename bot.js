@@ -50,10 +50,14 @@ switch (commands[0].toLowerCase()) {
         break;
     // Poems
     case "poem":
+        if (commands[1] === null) {                         // no user listed, give Cthulhu poem
+            message.channel.sendMessage("Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn.");
+            break;
+        }
         var listLength = Object.keys(poemList.poem).length;            // Number of poems available
         var rng = Math.floor(Math.random()*listLength);                // Random poem number
         var poem = poemList.poem[rng].replace("{0}", commands[1]);     // Select poem, insert command
-        message.channel.sendMessage(listLength);
+        message.channel.sendMessage(poem);
         break;
     case "wasa":
       message.channel.sendMessage("Buster, Sparkle, Newbie, Speedy \nand then there's Wasa our smallest kitty, \nOne, two, three and four and five, \nthey're so frisky, so alive.");
