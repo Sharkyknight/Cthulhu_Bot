@@ -119,9 +119,9 @@ bot.on('message', message => {
             message.channel.sendMessage("H");
             /* Put time remaining into a string */
             var timeStr = "" + days + "d " hours + "h " + minutes + "m";
-            var msg = messages.01reboot.replace("{0}", timeStr);
+            var msg = messages.rebootA.replace("{0}", timeStr);
             message.channel.sendMessage(msg);
-            message.channel.sendMessage(messages.02reboot);
+            message.channel.sendMessage(messages.rebootB);
             break;
         case "free":
             var date = new Date();
