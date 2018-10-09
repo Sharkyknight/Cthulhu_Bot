@@ -35,7 +35,7 @@ function randomDialogue(obj, name){
         while (dialog.includes("{0}")){                     // insert name into poem
             dialog = dialog.replace("{0}", name);
         }
-        return "It'll be okay, trust me Sharky";
+        return "dialog";
     }
 }
     
