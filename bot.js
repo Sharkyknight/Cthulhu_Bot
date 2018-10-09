@@ -128,100 +128,39 @@ bot.on('message', message => {
                 }
             }
             break;
-    case "reboot":
-        var rotationStart = new Date("6/2/2018");
-        var today = new Date();
-        var time = today.getTime();
-        var milliseconds_since = today.getTime() - rotationStart.getTime();
-        var hours_since = milliseconds_since / (1000 * 3600);
-        console.log(hours_since);
-        var days_since = Math.floor((hours_since - 11) / 24); // reboots happen at 7 my time, thus 7-7 = 14 with adjustment
-        console.log(days_since);
-        var daily = (days_since % 7);
-        console.log(daily);
-        var hours_today = (Math.floor(hours_since - 11)) % 24;
-        console.log(hours_today);
-        var remaininghours1 = (71 - hours_today);
-        var remaninghours11 = remaininghours1 + 1;
-        var remaininghours2 = (47 - hours_today);
-        var remaininghours22 = remaininghours2 + 1;
-        var remaininghours3 = (23 - hours_today);
-        var remaininghours33 = remaininghours3 + 1;
-        var minutes = Math.floor(time / (60000));
-        var minutes_now = ((minutes) % 60);
-        var minutes_remaining = (60 - minutes_now);
-        if (daily == 0) {
-            if (minutes_now == 0) {
-                message.channel.sendMessage("The next purge will be in " + remaininghours22 + "h 0m. Prepare yourselves!");
-                message.channel.sendMessage("Scheduled purges occur every Monday, Thursday, and Friday, at 4AM game time. Your end is inevitable!");
+        case "reboot":
+            var cDate = new Date(); // Current Date
+            var rDate = new Date(); // Next Reboot Date
+            /* Set to next Reboot date & time */
+            if (rDate.getMinutes > 0){          // Reboot happens on the hour
+                rDate.setMinutes(00);
+                rDate.setHours(rDate.getHours+1);
             }
-            else if (minutes_now > 0) {
-                message.channel.sendMessage("The next purge will be in " + remaininghours2 + "h " + minutes_remaining + "m. Prepare yourselves!");
-                message.channel.sendMessage("Scheduled purges occur every Monday, Thursday, and Friday, at 4AM game time. Your end is inevitable!");
+            if (rDate.getHours < 4){            //Reboot happens at 4am
+                rDate.setHours(4);
             }
-        }
-        else if (daily == 1) {
-            if (minutes_now == 0) {
-                message.channel.sendMessage("The next purge will be in " + remaininghours33 + "h 0m. Prepare yourselves!");
-                message.channel.sendMessage("Scheduled purges occur every Monday, Thursday, and Friday, at 4AM game time. Your end is inevitable!");
+            else{                               // After 4am need to increase the date
+                rDate.setHours(4);
+                rDate.setDate(rDate.getDate()+1);
             }
-            else if (minutes_now > 0) {
-                message.channel.sendMessage("The next purge will be in " + remaininghours3 + "h " + minutes_remaining + "m. Prepare yourselves!");
-                message.channel.sendMessage("Scheduled purges occur every Monday, Thursday, and Friday, at 4AM game time. Your end is inevitable!");
+            var day = rDate.getDay();
+            while (day != 1 && day != 3 && day != 5){  // Reboots happen on Mondays, Wednesdays & Thursdays.
+                rDate.setDate(rDate.getDate()+1);       // Increment until reboot day
             }
-        }
-        else if (daily == 2) {
-            if (minutes_now == 0) {
-                message.channel.sendMessage("The next purge will be in " + remaininghours11 + "h 0m. Prepare yourselves!");
-                message.channel.sendMessage("Scheduled purges occur every Monday, Thursday, and Friday, at 4AM game time. Your end is inevitable!");
-            }
-            else if (minutes_now > 0) {
-                message.channel.sendMessage("The next purge will be in " + remaininghours1 + "h " + minutes_remaining + "m. Prepare yourselves!");
-                message.channel.sendMessage("Scheduled purges occur every Monday, Thursday, and Friday, at 4AM game time. Your end is inevitable!");
-            }
-        }
-        else if (daily == 3) {
-            if (minutes_now == 0) {
-                message.channel.sendMessage("The next purge will be in " + remaininghours22 + "h 0m. Prepare yourselves!");
-                message.channel.sendMessage("Scheduled purges occur every Monday, Thursday, and Friday, at 4AM game time. Your end is inevitable!");
-            }
-            else if (minutes_now > 0) {
-                message.channel.sendMessage("The next purge will be in " + remaininghours2 + "h " + minutes_remaining + "m. Prepare yourselves!");
-                message.channel.sendMessage("Scheduled purges occur every Monday, Thursday, and Friday, at 4AM game time. Your end is inevitable!");
-            }
-        }
-        else if (daily == 4) {
-            if (minutes_now == 0) {
-                message.channel.sendMessage("The next purge will be in " + remaininghours33 + "h 0m. Prepare yourselves!");
-                message.channel.sendMessage("Scheduled purges occur every Monday, Thursday, and Friday, at 4AM game time. Your end is inevitable!");
-            }
-            else if (minutes_now > 0) {
-                message.channel.sendMessage("The next purge will be in " + remaininghours3 + "h " + minutes_remaining + "m. Prepare yourselves!");
-                message.channel.sendMessage("Scheduled purges occur every Monday, Thursday, and Friday, at 4AM game time. Your end is inevitable!");
-            }
-        }
-        else if (daily == 5) {
-            if (minutes_now == 0) {
-                message.channel.sendMessage("The next purge will be in " + remaininghours33 + "h 0m. Prepare yourselves!");
-                message.channel.sendMessage("Scheduled purges occur every Monday, Thursday, and Friday, at 4AM game time. Your end is inevitable!");
-            }
-            else if (minutes_now > 0) {
-                message.channel.sendMessage("The next purge will be in " + remaininghours3 + "h " + minutes_remaining + "m. Prepare yourselves!");
-                message.channel.sendMessage("Scheduled purges occur every Monday, Thursday, and Friday, at 4AM game time. Your end is inevitable!");
-            }
-        }
-        else if (daily == 6) {
-            if (minutes_now == 0) {
-                message.channel.sendMessage("The next purge will be in " + remaininghours11 + "h 0m. Prepare yourselves!");
-                message.channel.sendMessage("Scheduled purges occur every Monday, Thursday, and Friday, at 4AM game time. Your end is inevitable!");
-            }
-            else if (minutes_now > 0) {
-                message.channel.sendMessage("The next purge will be in " + remaininghours1 + "h " + minutes_remaining + "m. Prepare yourselves!");
-                message.channel.sendMessage("Scheduled purges occur every Monday, Thursday, and Friday, at 4AM game time. Your end is inevitable!");
-            }
-        }
-        break;
-        case "free":
+            /* Get difference between current time and reboot time */
+            var seconds = Math.abs(rDate - cDate) / 1000;
+            var days = Math.floor(seconds/86400);       // days left until reboot
+            seconds -= (days * 86400);
+            var hours = Math.floor(seconds/3600) % 24;  // hours left until reboot
+            seconds -= hours*3600;
+            var minutes = Math.floor(seconds/60) % 60;  // minutes left until reboot
+            seconds -= minutes*60;
+            /* Put time remaining into a string */
+            var timeStr = "" + days + "d " hours + "h " + minutes + "m";
+            var msg = messages.01reboot.replace("{0}", timeStr);
+            message.channel.sendMessage(msg);
+            message.channel.sendMessage(messages.02reboot);
+            break;        case "free":
             var date = new Date();
             var day = date.getDay();
             if (day == 0) { // Sunday
