@@ -110,10 +110,9 @@ bot.on('message', message => {
             var minutes = Math.floor(seconds/60) % 60;  // minutes left until reboot
             seconds -= minutes*60;
             /* Put time remaining into a string */
-            //var timeStr = "" + days + "d " hours + "h " + minutes + "m";
-            //var msg = messages.rebootA.replace("{0}", timeStr);
-            //message.channel.sendMessage(msg);
-            message.channel.sendMessage("Test2..");
+            var timeStr = "" + days + "d " hours + "h " + minutes + "m";
+            var msg = messages.rebootA.replace("{0}", timeStr);
+            message.channel.sendMessage(msg);
             message.channel.sendMessage(messages.rebootB);
             break;
         case "free":
