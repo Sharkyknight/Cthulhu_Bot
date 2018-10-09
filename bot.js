@@ -91,16 +91,13 @@ bot.on('message', message => {
                 rDate.setHours(rDate.getHours()+1);
             }
             if (rDate.getHours() < 4){            //Reboot happens at 4am
-                //rDate.setHours(4);
-                //message.channel.sendMessage("C");
+                rDate.setHours(4);
             }
             else{                               // After 4am need to increase the date
-                //rDate.setHours(4);
-                //rDate.setDate(rDate.getDate()+1);
-                //message.channel.sendMessage("D");
+                rDate.setHours(4);
+                rDate.setDate(rDate.getDate()+1);
             }
             var day = rDate.getDay();
-            message.channel.sendMessage("E");
             //while (day != 1 && day != 3 && day != 5){  // Reboots happen on Mondays, Wednesdays & Thursdays.
               //  message.channel.sendMessage("F..");
                 //rDate.setDate(rDate.getDate()+1);       // Increment until reboot day
