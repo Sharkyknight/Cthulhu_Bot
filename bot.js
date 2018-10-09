@@ -97,7 +97,9 @@ bot.on('message', message => {
                 var timern = clock.getHours();
                 message.channel.sendMessage(clock.toTimeString());
                 clock.setDate(clock.getDate-1);
+                message.channel.sendMessage(clock.toTimeString());
                 clock.setHours(clock.getHours()+(16+timern));
+                message.channel.sendMessage(clock.toTimeString());
             }
             else {
                 message.channel.sendMessage(clock.toTimeString());
