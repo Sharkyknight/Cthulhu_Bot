@@ -104,15 +104,14 @@ bot.on('message', message => {
             /* Get difference between current time and reboot time */
             var timeStr = "";
             var seconds = Math.abs(rDate - cDate) / 1000;
-            var days = Math.floor(seconds/86400);       // days left until reboot
-            seconds -= (days * 86400);
-            timeStr = timeStr + days.toString() + "d ";
+            //var days = Math.floor(seconds/86400);       // days left until reboot
+            //seconds -= (days * 86400);
             var hours = Math.floor(seconds/3600) % 24;  // hours left until reboot
             seconds -= hours*3600;
             var minutes = Math.floor(seconds/60) % 60;  // minutes left until reboot
             seconds -= minutes*60;
             /* Put time remaining into a string */
-            //var timeStr = "" + days + "d " hours + "h " + minutes + "m";
+            var timeStr = "" + hours.toString() + "h " + minutes.toString() + "m";
             message.channel.sendMessage("test4...");
             //var msg = messages.rebootA.replace("{0}", timeStr);
             //message.channel.sendMessage(msg);
