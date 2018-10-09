@@ -45,7 +45,7 @@ bot.on('message', message => {
     * Return
     *   Returns a Date object set to YPP current time
     */
-    function setTime(){
+    function getClock(){
         var clock = new Date();
         if (clock.getHours < 8){            // Remove 8 hours from current time
             var timern = clock.getHours();
@@ -87,13 +87,13 @@ bot.on('message', message => {
             message.channel.sendMessage(msg);
             break;
         case "time":
-            var clock = setTime();
+            var clock = getClock();
             var msg = messages.clock.replace("{0}", clock.toTimeString());
             message.channel.sendMessage(msg);
             break;
         case "reboot":
-            var cDate = setTime(); // Current Date
-            var rDate = setTime(); // Next Reboot Date
+            var cDate = getClock(); // Current Date
+            var rDate = getClock(); // Next Reboot Date
             /* Set to next Reboot date & time */
             if (rDate.getMinutes() > 0){          // Reboot happens on the hour
                 rDate.setMinutes(0);
