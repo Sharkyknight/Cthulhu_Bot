@@ -86,22 +86,29 @@ bot.on('message', message => {
             var cDate = new Date(); // Current Date
             var rDate = new Date(); // Next Reboot Date
             /* Set to next Reboot date & time */
+            message.channel.sendMessage("A");
             if (rDate.getMinutes() > 0){          // Reboot happens on the hour
                 rDate.setMinutes(00);
                 rDate.setHours(rDate.getHours+1);
             }
+            message.channel.sendMessage("B");
             if (rDate.getHours() < 4){            //Reboot happens at 4am
                 rDate.setHours(4);
+                message.channel.sendMessage("C");
             }
             else{                               // After 4am need to increase the date
                 rDate.setHours(4);
                 rDate.setDate(rDate.getDate()+1);
+                message.channel.sendMessage("D");
             }
             var day = rDate.getDay();
+            message.channel.sendMessage("E");
             while (day != 1 && day != 3 && day != 5){  // Reboots happen on Mondays, Wednesdays & Thursdays.
+                message.channel.sendMessage("F..");
                 rDate.setDate(rDate.getDate()+1);       // Increment until reboot day
             }
             /* Get difference between current time and reboot time */
+            message.channel.sendMessage("G");
             var seconds = Math.abs(rDate - cDate) / 1000;
             var days = Math.floor(seconds/86400);       // days left until reboot
             seconds -= (days * 86400);
@@ -109,6 +116,7 @@ bot.on('message', message => {
             seconds -= hours*3600;
             var minutes = Math.floor(seconds/60) % 60;  // minutes left until reboot
             seconds -= minutes*60;
+            message.channel.sendMessage("H");
             /* Put time remaining into a string */
             var timeStr = "" + days + "d " hours + "h " + minutes + "m";
             var msg = messages.01reboot.replace("{0}", timeStr);
