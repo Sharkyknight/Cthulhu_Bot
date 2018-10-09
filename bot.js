@@ -280,6 +280,19 @@ switch (commands[0].toLowerCase()) {
         message.channel.sendMessage("List of current powers: \n\n *smh: Shows the current, previous, and upcoming SMH maps. \n *rotation: Shows the order of rotation for SMH maps. \n *reboot: Shows when the next ingame scheduled reboot is going to occur. \n *free: Shows the free Labor & Parlor puzzles of the day. \n *labor (dub price): Shows how much you must get paid per hour for breakeven with the (dub price) you enter \n *time: Shows current game time");
         break;
         
+        // Dialogues
+        case "poem":
+            var poetry = randomDialogue(dialogues.poem, commands[1]);
+            message.channel.sendMessage(poetry);
+            break;
+        case "sharky":
+            message.channel.sendMessage(messages.sharky);
+            break;
+        case "iwnabeu":
+            message.channel.sendMessage(messages.iwnabeu);
+            break;
+        // TODO
+        
         // Comments
         case "001comment":
             var comment = (message.author.username == user1) ? messages.commentA : messages.rejected;
