@@ -113,9 +113,9 @@ bot.on('message', message => {
             }
             /* Get difference between current time and reboot time */
             var seconds = Math.abs(cDate - rDate) / 1000;
-            var hours = Math.floor(seconds/3600) % 24;  // hours left until reboot
+            var hours = Math.floor(seconds/3600);  // hours left until reboot
             seconds -= hours*3600;
-            var minutes = Math.floor(seconds/60) % 60;  // minutes left until reboot
+            var minutes = Math.floor(seconds/60);  // minutes left until reboot
             seconds -= minutes*60;
             /* Put time remaining into a string */
             var timeStr = "" + hours.toString() + "h " + minutes.toString() + "m";
