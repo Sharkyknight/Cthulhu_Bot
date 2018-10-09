@@ -86,15 +86,13 @@ bot.on('message', message => {
             var cDate = new Date(); // Current Date
             var rDate = new Date(); // Next Reboot Date
             /* Set to next Reboot date & time */
-            message.channel.sendMessage("A");
             if (rDate.getMinutes() > 0){          // Reboot happens on the hour
-                //rDate.setMinutes(00);
-                //rDate.setHours(rDate.getHours+1);
+                rDate.setMinutes(00);
+                rDate.setHours(rDate.getHours+1);
             }
-            message.channel.sendMessage("B");
             if (rDate.getHours() < 4){            //Reboot happens at 4am
-                //rDate.setHours(4);
-                //message.channel.sendMessage("C");
+                rDate.setHours(4);
+                message.channel.sendMessage("C");
             }
             else{                               // After 4am need to increase the date
                 //rDate.setHours(4);
