@@ -77,7 +77,7 @@ bot.on('message', message => {
                 message.channel.sendMessage("C" + clock.toTimeString());
             }
             else {
-                message.channel.sendMessage("D" + clock.toTimeString());
+                message.channel.sendMessage("F" + clock.toTimeString());
                 var temp = clock.getHours - 8;
                 clock.setHours(temp);
             }
