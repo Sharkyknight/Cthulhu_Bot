@@ -94,7 +94,7 @@ bot.on('message', message => {
         case "time":
             var clock = new Date();
             clock.setTime(clock.getHours-8);            // Remove 8 hours from current time
-            var msg = messages.clock.replace("{0}", clock.toTimeString());
+            var msg = messages.clock.toString.replace("{0}", clock.toTimeString());
             message.channel.sendMessage(msg);
             break;
         case "reboot":
