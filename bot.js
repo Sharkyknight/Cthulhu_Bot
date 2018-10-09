@@ -112,7 +112,8 @@ bot.on('message', message => {
                 rDate.setDate(day);       // Increment until reboot day
             }
             /* Get difference between current time and reboot time in minutes */
-            var minutes = Math.abs(rDate.getMinutes() - cDate.getMinutes());
+            var milliseconds = Math.abs(rDate.getTime() - cDate.getTime());
+            var minutes = Math.floor(milliseconds / 60000);
             var hours = Math.floor(minutes/60);         // hours left until reboot
             minutes = minutes-(hours*60);               // minutes left until reboot
             
