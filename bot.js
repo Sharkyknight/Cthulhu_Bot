@@ -53,55 +53,6 @@ bot.on('message', message => {
     }
     
 switch (commands[0].toLowerCase()) {
-    // Comments
-    case "001comment":
-        if (message.author.username == user1) {
-            message.channel.sendMessage("oooh... I'm very interested in this. Such a nice image of these naive pirates going against us. A truly pitiful end.");
-        }
-         else {
-            message.channel.sendMessage("You are not worthy of my time, mortal...")
-        }
-        break;
-    case "002comment":
-        if (message.author.username == user1) {
-            message.channel.sendMessage("...");
-        }
-         else {
-            message.channel.sendMessage("You are not worthy of my time, mortal...")
-        }
-        break;
-   case "003comment":
-        if (message.author.username == user1) {
-            message.channel.sendMessage("what a useless command.");
-        }
-         else {
-            message.channel.sendMessage("You are not worthy of my time, mortal...")
-        }
-        break;
-    case "004comment":
-        if (message.author.username == user1) {
-            message.channel.sendMessage("So. Very. USELESS.");
-        }
-         else {
-            message.channel.sendMessage("You are not worthy of my time, mortal...")
-        }
-        break;
-    case "001update":
-        if (message.author.username == user1) {
-            message.channel.sendMessage("HA! My powers are growing... and so comes closer your inevitable end... Soon, you will be no more...");
-        }
-        else {
-            message.channel.sendMessage("You are not worthy of my time, mortal...")
-        }
-        break;
-    case "002update":
-        if (message.author.username == user1) {
-            message.channel.sendMessage("You are unlocking more powers for me to use... you think this is helping you, but it's only making me STRONGER...");
-        }
-         else {
-            message.channel.sendMessage("You are not worthy of my time, mortal...")
-        }
-        break;
     case "sharky":
         message.channel.sendMessage(":shark::shark::shark:");
         break;
@@ -328,6 +279,32 @@ switch (commands[0].toLowerCase()) {
     case "help":
         message.channel.sendMessage("List of current powers: \n\n *smh: Shows the current, previous, and upcoming SMH maps. \n *rotation: Shows the order of rotation for SMH maps. \n *reboot: Shows when the next ingame scheduled reboot is going to occur. \n *free: Shows the free Labor & Parlor puzzles of the day. \n *labor (dub price): Shows how much you must get paid per hour for breakeven with the (dub price) you enter \n *time: Shows current game time");
         break;
+        
+        // Comments
+        case "001comment":
+            var comment = (message.author.username == user1) ? messages001comment : messages.rejected;
+            message.channel.sendMessage(comment);
+            break;
+        case "002comment":
+            var comment = (message.author.username == user1) ? messages.002comment : messages.rejected;
+            message.channel.sendMessage(comment);
+            break;
+        case "003comment":
+            var comment = (message.author.username == user1) ? messages.003comment : messages.rejected;
+            message.channel.sendMessage(comment);
+            break;
+        case "004comment":
+            var comment = (message.author.username == user1) ? messages.004comment : messages.rejected;
+            message.channel.sendMessage(comment);
+            break;
+        case "001update":
+            var comment = (message.author.username == user1) ? messages.001update : messages.rejected;
+            message.channel.sendMessage(comment);
+            break;
+        case "002update":
+            var comment = (message.author.username == user1) ? messages.002update : messages.rejected;
+            message.channel.sendMessage(comment);
+            break;
 
         // Introduction
         case "001introduction":
