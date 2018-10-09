@@ -25,6 +25,7 @@ user1 = "Sharkyknight";
 *   Randomly selected value within obj, where all {0}s are replaced with name
 */
 function randomDialogue(obj, name){
+    message.channel.sendMessage("Sharky trust me it'll be okay");
     if (typeof name === "undefined" || !obj || obj == "null" || object == "undefined") {    // Parameters incorrect
         return("Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn.");
     }
@@ -32,9 +33,9 @@ function randomDialogue(obj, name){
         var num = Object.keys(dialogues.poem).length;                  // Total num of dialogues available
         var rng = Math.floor(Math.random()*num);
         var dialog = dialogues.poem[rng];
-        //while (dialog.includes("{0}")){                     // insert name into poem
-            //dialog = dialog.replace("{0}", name);
-        //}
+        while (dialog.includes("{0}")){                     // insert name into poem
+            dialog = dialog.replace("{0}", name);
+        }
         return dialog;
     }
 }
