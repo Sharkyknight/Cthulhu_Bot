@@ -95,12 +95,15 @@ bot.on('message', message => {
             var clock = new Date();
             if (clock.getHours < 8){            // Remove 8 hours from current time
                 var timern = clock.getHours();
+                message.channel.sendMessage(clock.toTimeString());
                 clock.setDate(clock.getDate-1);
                 clock.setHours(clock.getHours()+(16+timern));
             }
             else {
+                message.channel.sendMessage(clock.toTimeString());
                 clock.setHours(clock.getHours-8);
             }
+            message.channel.sendMessage(clock.toTimeString());
             var msg = messages.clock.replace("{0}", clock.toTimeString());
             message.channel.sendMessage(msg);
             break;
