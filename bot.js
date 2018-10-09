@@ -50,15 +50,18 @@ switch (commands[0].toLowerCase()) {
         break;
     // Poems
     case "poem":
+        message.channel.sendMessage(commands[1]);
         if (commands[1] === null) {                         // no user listed, give Cthulhu poem
             message.channel.sendMessage("Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn.");
             break;
         }
-        var listLength = Object.keys(poemList.poem).length;            // Number of poems available
-        var rng = Math.floor(Math.random()*listLength);                // Random poem number
-        var poem = poemList.poem[rng].replace("{0}", commands[1]);     // Select poem, insert command
-        message.channel.sendMessage(poem);
-        break;
+        else {
+            var listLength = Object.keys(poemList.poem).length;            // Number of poems available
+            var rng = Math.floor(Math.random()*listLength);                // Random poem number
+            var poetry = poemList.poem[rng].replace("{0}", commands[1]);     // Select poem, insert command
+            message.channel.sendMessage(poetry);
+            break;
+        }
     case "wasa":
       message.channel.sendMessage("Buster, Sparkle, Newbie, Speedy \nand then there's Wasa our smallest kitty, \nOne, two, three and four and five, \nthey're so frisky, so alive.");
         break;
