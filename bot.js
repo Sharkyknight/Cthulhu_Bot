@@ -57,7 +57,10 @@ switch (commands[0].toLowerCase()) {
         else {
             var listLength = Object.keys(poemList.poem).length;            // Number of poems available
             var rng = Math.floor(Math.random()*listLength);                // Random poem number
-            var poetry = poemList.poem[rng].replaceAll({0}, commands[1]);     // Select poem, insert command
+            var poetry = poemList.poem[rng];                               // Select poem
+            while (poetry.includes("{0}")){                                 // Replace all
+                poetry.replace("{0}", commands[1]);
+            }
             message.channel.sendMessage(poetry);
             break;
         }
