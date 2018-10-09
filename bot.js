@@ -70,17 +70,13 @@ bot.on('message', message => {
             var clock = new Date();
             if (clock.getHours < 8){            // Remove 8 hours from current time
                 var timern = clock.getHours();
-                message.channel.sendMessage("A" + clock.toTimeString());
-                clock.setDate(clock.getDate-1);
-                message.channel.sendMessage("B" + clock.toTimeString());
-                clock.setHours(clock.getHours()+(16+timern));
-                message.channel.sendMessage("C" + clock.toTimeString());
+                var temp = clock.getDate()-1;
+                clock.setDate(temp);
+                temp = clock.getHours()+(17+timern);
+                clock.setHours(temp);
             }
             else {
-                message.channel.sendMessage("F" + clock.toTimeString());
-                var temp = clock.getHours() - 8;
-                message.channel.sendMessage("G" + clock.getHours());
-                message.channel.sendMessage("H" + temp);
+                var temp = clock.getHours() - 7;
                 clock.setHours(temp);
             }
             message.channel.sendMessage("E" + clock.toTimeString());
