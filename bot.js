@@ -97,6 +97,9 @@ switch (commands[0].toLowerCase()) {
     case "pastey":
         message.channel.sendMessage("You're the type of person\nThat makes forever seem too short");
         break;
+    case "ilovecarso":
+        message.channel.sendMessage("Carso loves you too <3");
+        break;
     case "jojo":
       message.channel.sendMessage("Roses are red, \nViolets are blue, \nSugar is sweet \nand Jojo is too.");
         break;
