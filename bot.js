@@ -282,27 +282,27 @@ switch (commands[0].toLowerCase()) {
         
         // Comments
         case "001comment":
-            var comment = (message.author.username == user1) ? messages.001comment : messages.rejected;
+            var comment = (message.author.username == user1) ? messages.commentA : messages.rejected;
             message.channel.sendMessage(comment);
             break;
         case "002comment":
-            var comment = (message.author.username == user1) ? messages.002comment : messages.rejected;
+            var comment = (message.author.username == user1) ? messages.commentB : messages.rejected;
             message.channel.sendMessage(comment);
             break;
         case "003comment":
-            var comment = (message.author.username == user1) ? messages.003comment : messages.rejected;
+            var comment = (message.author.username == user1) ? messages.commentC : messages.rejected;
             message.channel.sendMessage(comment);
             break;
         case "004comment":
-            var comment = (message.author.username == user1) ? messages.004comment : messages.rejected;
+            var comment = (message.author.username == user1) ? messages.commentD : messages.rejected;
             message.channel.sendMessage(comment);
             break;
         case "001update":
-            var comment = (message.author.username == user1) ? messages.001upd : messages.rejected;
+            var comment = (message.author.username == user1) ? messages.updateA : messages.rejected;
             message.channel.sendMessage(comment);
             break;
         case "002update":
-            var comment = (message.author.username == user1) ? messages.002upd : messages.rejected;
+            var comment = (message.author.username == user1) ? messages.updateB : messages.rejected;
             message.channel.sendMessage(comment);
             break;
 
