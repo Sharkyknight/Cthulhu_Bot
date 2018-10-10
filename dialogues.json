@@ -21,6 +21,14 @@
     "The apple of my eye,\nThe gem of my heart,\n{0}, nothing in the world\nWill keep us apart.",
     "For where ever in this world you may roam,\nin my heart {0} will always be home."
   ],
+  "appreciate" : [
+    "{0} is the best!",
+    "{0} is amazing!",
+    "{0} rocks!",
+    "{0} is a star!",
+    "{0} is wonderful!",
+    "{0}, everything you touch turns to gold!"
+  ],
   "magicball" : [
     "It is certain.",
     "It is decidedly so.",
