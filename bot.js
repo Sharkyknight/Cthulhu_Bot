@@ -169,6 +169,10 @@ bot.on('message', message => {
             var poetry = randomDialogue(dialogues.poem, commands[1]);
             message.channel.sendMessage(poetry);
             break;
+        case "magic8ball":
+            var response = randomDialogue(dialogues.magicball, "");
+            message.channel.sendMessage(response);
+            break;
         case "sharky":
             message.channel.sendMessage(messages.sharky);
             break;
