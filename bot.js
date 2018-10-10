@@ -89,6 +89,7 @@ bot.on('message', message => {
         case "time":
             var clock = getClock();
             var msg = messages.clock.replace("{0}", clock.toTimeString());
+            msg = msg.slice(0, -14);
             message.channel.sendMessage(msg);
             break;
         case "reboot":
