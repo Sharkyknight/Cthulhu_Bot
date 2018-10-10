@@ -192,7 +192,7 @@ bot.on('message', message => {
         case "cthulhu":
             var msg = "Ehh..";
             for (var i=0; i<commands.length; i++){
-                if (commands[i] == "Jojo" || commands[i] == "Sharky" || commands[i] == "Carso") {
+                if (commands[i] == "Jojo" || commands[i] == "Sharky" || commands[i] == "me") {
                     msg = "Very much so!";
                     break;
                 }
