@@ -167,6 +167,10 @@ bot.on('message', message => {
             break;
         
         // Dialogues
+        case "pickup":
+            var pickup = randomDialogue(dialogues.pickup, commands[1]);
+            message.channel.sendMessage(pickup);
+            break;
         case "poem":
             var poetry = randomDialogue(dialogues.poem, commands[1]);
             message.channel.sendMessage(poetry);
