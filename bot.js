@@ -205,7 +205,7 @@ bot.on('message', message => {
                     break;
                 }
             }
-            var comment = (message.author.username == user1 || message.author.username == user2 || message.author.username == "pasteyman" ) ? msg : messages.rejected;
+            var comment = (message.author.username == user1 || message.author.username == user2 || message.author.username == "pasteyman" || message.author.username == "Vermiljoen" ) ? msg : messages.rejected;
             message.channel.sendMessage(comment);
             break;
             
