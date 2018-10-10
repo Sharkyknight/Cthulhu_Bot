@@ -176,6 +176,10 @@ bot.on('message', message => {
             message.channel.sendMessage(poetry);
             break;
         case "magic8ball":
+            if (typeof commands[1] === "undefined" || !obj || obj == "null" || obj === "undefined") {    // Parameters incorrect
+                message.channel.sendMessage("I need something to predict. The proper format is:  *magic8ball (question)");
+                break;
+            }
             var response = randomDialogue(dialogues.magicball, "");
             message.channel.sendMessage(response);
             break;
