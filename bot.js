@@ -216,33 +216,33 @@ bot.on('message', message => {
         
         // Comments
         case "001comment":
-            var comment = (message.author.username == user1) ? messages.commentA : messages.rejected;
+            var comment = (message.author.username == user1 || message.author.username == user2) ? messages.commentA : messages.rejected;
             message.channel.sendMessage(comment);
             break;
         case "002comment":
-            var comment = (message.author.username == user1) ? messages.commentB : messages.rejected;
+            var comment = (message.author.username == user1 || message.author.username == user2) ? messages.commentB : messages.rejected;
             message.channel.sendMessage(comment);
             break;
         case "003comment":
-            var comment = (message.author.username == user1) ? messages.commentC : messages.rejected;
+            var comment = (message.author.username == user1 || message.author.username == user2) ? messages.commentC : messages.rejected;
             message.channel.sendMessage(comment);
             break;
         case "004comment":
-            var comment = (message.author.username == user1) ? messages.commentD : messages.rejected;
+            var comment = (message.author.username == user1 || message.author.username == user2) ? messages.commentD : messages.rejected;
             message.channel.sendMessage(comment);
             break;
         case "001update":
-            var comment = (message.author.username == user1) ? messages.updateA : messages.rejected;
+            var comment = (message.author.username == user1 || message.author.username == user2) ? messages.updateA : messages.rejected;
             message.channel.sendMessage(comment);
             break;
         case "002update":
-            var comment = (message.author.username == user1) ? messages.updateB : messages.rejected;
+            var comment = (message.author.username == user1 || message.author.username == user2) ? messages.updateB : messages.rejected;
             message.channel.sendMessage(comment);
             break;
 
         // Introduction
         case "001introduction":
-            var intro = (message.author.username == user1) ? messages.intro : messages.rejected;
+            var intro = (message.author.username == user1 || message.author.username == user2) ? messages.intro : messages.rejected;
             message.channel.sendMessage(intro);
             break;
     }
