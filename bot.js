@@ -175,6 +175,10 @@ bot.on('message', message => {
             var response = randomDialogue(dialogues.magicball, "");
             message.channel.sendMessage(response);
             break;
+        case "appreciate":
+            var response = randomDialogue(dialogues.appreciate, commands[1]);
+            message.channel.sendMessage(response);
+            break;
         case "sharky":
             message.channel.sendMessage(messages.sharky);
             break;
