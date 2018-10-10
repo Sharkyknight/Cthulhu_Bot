@@ -175,10 +175,17 @@ bot.on('message', message => {
             var response = randomDialogue(dialogues.magicball, "");
             message.channel.sendMessage(response);
             break;
-        case "appreciate":
+        case "appreciate":  /* This is such hacky code please forgive me! */
             var name = (commands[1] === "me") ? message.author.username : commands[1];
-            var response = randomDialogue(dialogues.appreciate, name);
-            message.channel.sendMessage(response);
+            var responseA = randomDialogue(dialogues.appreciate, name);
+            var responseB = randomDialogue(dialogues.appreciate, name);
+            var responseC = randomDialogue(dialogues.appreciate, name);
+            while (responseA === responseB || responseB == responseC || responseA == responseC){
+                responseA = randomDialogue(dialogues.appreciate, name);
+                responseB = randomDialogue(dialogues.appreciate, name);
+                responseC = randomDialogue(dialogues.appreciate, name);
+            }
+            message.channel.sendMessage(responseA + " " + responseB + " " + responseC);
             break;
         case "sharky":
             message.channel.sendMessage(messages.sharky);
