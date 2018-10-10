@@ -179,7 +179,9 @@ bot.on('message', message => {
         case "iwnabeu":
             message.channel.sendMessage(messages.iwnabeu);
             break;
-        // TODO
+        case "loveme":
+            message.channel.sendMessage(messages.loveme.replace("{0}", message.author.username));
+            break;
         
         // Comments
         case "001comment":
