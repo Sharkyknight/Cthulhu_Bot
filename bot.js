@@ -176,7 +176,8 @@ bot.on('message', message => {
             message.channel.sendMessage(response);
             break;
         case "appreciate":
-            var response = randomDialogue(dialogues.appreciate, commands[1]);
+            var name = (commands[1] === "me") ? message.author.username : commands[1];
+            var response = randomDialogue(dialogues.appreciate, name);
             message.channel.sendMessage(response);
             break;
         case "sharky":
