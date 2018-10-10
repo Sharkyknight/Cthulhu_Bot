@@ -177,7 +177,7 @@ bot.on('message', message => {
             break;
         case "magic8ball":
             if (typeof commands[1] === "undefined" || !obj || obj == "null" || obj === "undefined") {    // Parameters incorrect
-                message.channel.sendMessage(dialogues.magicfail);
+                message.channel.sendMessage(messages.magicfail);
             }
             else {
                 var response = randomDialogue(dialogues.magicball, "");
