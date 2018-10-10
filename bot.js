@@ -242,7 +242,7 @@ bot.on('message', message => {
 
         // Introduction
         case "001introduction":
-            var intro = (message.author.username == user1 || message.author.username == user2) ? messages.intro : messages.rejected;
+            var intro = (message.author.username == user1) ? messages.intro : messages.rejected;
             message.channel.sendMessage(intro);
             break;
     }
