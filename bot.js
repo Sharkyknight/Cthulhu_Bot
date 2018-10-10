@@ -192,12 +192,12 @@ bot.on('message', message => {
         case "cthulhu":
             var msg = "Ehh..";
             for (var i=0; i<commands.length; i++){
-                if (commands[i] == "Jojo" || commands[i] == "Sharky" || commands[i] == "me") {
+                if (commands[i] == "Jojo" || commands[i] == "Sharky" || commands[i] == "Carso" || commands[i] == "me") {
                     msg = "Very much so!";
                     break;
                 }
             }
-            var comment = (message.author.username == user2) ? msg : messages.rejected;
+            var comment = (message.author.username == user1 || message.author.username == user2) ? msg : messages.rejected;
             message.channel.sendMessage(comment);
             break;
             
