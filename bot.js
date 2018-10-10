@@ -18,6 +18,7 @@ bot.on('message', message => {
     var messages = require("./messages.json");
     
     user1 = "Sharkyknight";
+    user2 = "Carsomyr";
     
     /**
     * Parameters
@@ -183,6 +184,18 @@ bot.on('message', message => {
         case "loveme":
             message.channel.sendMessage(messages.loveme.replace("{0}", message.author.username));
             break;
+        case "cthulhu":
+            var msg = "Ehh..";
+            for (var i=0; i<commands.length; i++){
+                if (commands[i] == "Jojo" || commands[i] == "Sharky" || commands[i] == "Carso") {
+                    msg = "Very much so!";
+                    break;
+                }
+            }
+            var comment = (message.author.username == user2) ? msg : messages.rejected;
+            message.channel.sendMessage(comment);
+            break;
+            
         
         // Comments
         case "001comment":
