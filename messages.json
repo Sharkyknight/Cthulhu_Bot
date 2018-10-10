@@ -33,5 +33,5 @@
   "drinkhearts" : "The free Parlor puzzles today are Drinking and Hearts.",
   "tdpoker" : "The free Parlor puzzles today are Treasure drop and Poker.",
   "rotation": "The map rotation is as follows: \n\n Cursed Isles. \n Haunted Seas. \n Kraken Hunt. \n Atlantis.",
-  "help" : "List of current powers: \n\n *smh: Shows the current, previous, and upcoming SMH maps. \n *rotation: Shows the order of rotation for SMH maps. \n *reboot: Shows when the next ingame scheduled reboot is going to occur. \n *free: Shows the free Labor & Parlor puzzles of the day. \n *labor (dub price): Shows how much you must get paid per hour for breakeven with the (dub price) you enter \n *time: Shows current game time\n *poem (name): Writes a poem for the love of your life."
+  "help" : "List of current powers: \n\n *smh: Shows the current, previous, and upcoming SMH maps. \n *rotation: Shows the order of rotation for SMH maps. \n *reboot: Shows when the next ingame scheduled reboot is going to occur. \n *free: Shows the free Labor & Parlor puzzles of the day. \n *labor (dub price): Shows how much you must get paid per hour for breakeven with the (dub price) you enter \n *time: Shows current game time\n *poem (name): Writes a poem for the love of your life.\n *magic8ball: Ask it for a yes/no prediction.\n *love me: For when you just need some Cthulhu love."
 }
