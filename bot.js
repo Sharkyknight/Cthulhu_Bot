@@ -176,12 +176,13 @@ bot.on('message', message => {
             message.channel.sendMessage(poetry);
             break;
         case "magic8ball":
-            //if (typeof commands[1] === "undefined" || !obj || obj == "null" || obj === "undefined") {    // Parameters incorrect
-              //  message.channel.sendMessage("I need something to predict. The proper format is:  *magic8ball (question)");
-              //  break;
-            //}
-            var response = randomDialogue(dialogues.magicball, "");
-            message.channel.sendMessage(response);
+            if (typeof commands[1] === "undefined" || !obj || obj == "null" || obj === "undefined") {    // Parameters incorrect
+                message.channel.sendMessage(dialogues.magicfail);
+            }
+            else {
+                var response = randomDialogue(dialogues.magicball, "");
+                message.channel.sendMessage(response);
+            }
             break;
         case "appreciate":  /* This is such hacky code please forgive me! */
             var name = (commands[1] === "me") ? message.author.username : commands[1];
