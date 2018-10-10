@@ -90,7 +90,7 @@ bot.on('message', message => {
             var clock = getClock();
             var msg = messages.clock.replace("{0}", clock.toTimeString());
             msg = msg.slice(0, -25);
-            message.channel.sendMessage(msg);
+            message.channel.sendMessage(msg + " Game Time");
             break;
         case "reboot":
             var cDate = getClock(); // Current Date
