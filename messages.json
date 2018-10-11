@@ -11,7 +11,7 @@
   "updateA" : "HA! My powers are growing... and so comes closer your inevitable end... Soon, you will be no more...",
   "updateB" : "You are unlocking more powers for me to use... you think this is helping you, but it's only making me STRONGER...",
   "INVALID USE RESPONSES" : "",
-  "error" : "I'm not sure what you're trying to do. For available commands, please use:   *help";
+  "error" : "I'm not sure what you're trying to do. For available commands, please use:   *help",
   "invalidLabor" : "Invalid format. Please type the price of the dub after labor. Example: *labor 3000",
   "magicfail" : "I need something to predict. Please use:   *magic8ball (question)",
   "pickupfail" : "Who are you tring to pick up? Please use:   *pickup (name)",
