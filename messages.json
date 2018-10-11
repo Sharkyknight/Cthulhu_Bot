@@ -15,6 +15,7 @@
   "invalidLabor" : "Invalid format. Please type the price of the dub after labor. Example: *labor 3000",
   "magicfail" : "I need something to predict. Please use:   *magic8ball (question)",
   "pickupfail" : "Who are you tring to pick up? Please use:   *pickup (name)",
+  "nightfail" : "Goodnight, {0}.",
   "cthpoem" : "Ph'nglui mglw'nafh\nCthulhu R'lyeh wgah'nagl fhtagn.",
   "DIALOGUES COMMENTS" : "",
   "loveme" : "I'll always love you, {0}.",
