@@ -191,6 +191,15 @@ bot.on('message', message => {
             }
             message.channel.sendMessage(responseA + " " + responseB + " " + responseC);
             break;
+        case "goodnight":
+            var name = commands[1];
+            if (typeof name === "undefined" || !obj || obj == "null" || obj === "undefined") {    // Parameters incorrect
+                 // Should Cthulhu respond?
+            }
+            else {
+                msg = messages.night.replace("{0}", name);
+                message.channel.sendMessage(msg);
+            break;
         case "sharky":
             message.channel.sendMessage(messages.sharky);
             break;
