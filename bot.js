@@ -29,7 +29,7 @@ bot.on('message', message => {
     */
     function randomDialogue(obj, name){
         if (typeof name === "undefined" || !obj || obj == "null" || obj === "undefined") {    // Parameters incorrect
-            return("Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn.");
+            return(messages.cthpoem);
         }
         else {
             var num = Object.keys(obj).length;                  // Total num of dialogues available
@@ -176,7 +176,7 @@ bot.on('message', message => {
             message.channel.sendMessage(poetry);
             break;
         case "magic8ball":
-            var response = randomDialogue(dialogues.magicball, "");
+            var response = (typeof commands[1] === "undefined") ? messages.magicfail : randomDialogue(dialogues.magicball, "");
             message.channel.sendMessage(response);
             break;
         case "appreciate":  /* This is such hacky code please forgive me! */
@@ -192,14 +192,8 @@ bot.on('message', message => {
             message.channel.sendMessage(responseA + " " + responseB + " " + responseC);
             break;
         case "goodnight":
-            var name = commands[1];
-            if (typeof name === "undefined" || !obj || obj == "null" || obj === "undefined") {    // Parameters incorrect
-                 // Should Cthulhu respond?
-            }
-            else {
-                msg = messages.night.replace("{0}", name);
-                message.channel.sendMessage(msg);
-            }
+            var msg = (typeof commands[1] === "undefined") ? messages.cthpoem : messages.night.replace("{0}", commands[1]);
+            message.channel.sendMessage(msg);
             break;
         case "sharky":
             message.channel.sendMessage(messages.sharky);
