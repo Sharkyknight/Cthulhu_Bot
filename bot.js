@@ -199,6 +199,7 @@ bot.on('message', message => {
             else {
                 msg = messages.night.replace("{0}", name);
                 message.channel.sendMessage(msg);
+            }
             break;
         case "sharky":
             message.channel.sendMessage(messages.sharky);
