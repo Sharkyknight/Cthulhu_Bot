@@ -29,7 +29,7 @@ bot.on('message', message => {
     */
     function randomDialogue(obj, name){
         if (typeof name === "undefined" || !obj || obj == "null" || obj === "undefined") {    // Parameters incorrect
-            return(messages.cthpoem);
+            return(messages.error);
         }
         else {
             var num = Object.keys(obj).length;                  // Total num of dialogues available
@@ -168,19 +168,19 @@ bot.on('message', message => {
         
         // Dialogues
         case "pickup":
-            var pickup = randomDialogue(dialogues.pickup, commands[1]);
-            message.channel.sendMessage(pickup);
+            var response = (typeof commands[1] === "undefined") ? messages.pickupfail : randomDialogue(dialogues.pickup, commands[1]);
+            message.channel.sendMessage(response);
             break;
         case "poem":
-            var poetry = randomDialogue(dialogues.poem, commands[1]);
-            message.channel.sendMessage(poetry);
+            var response = (typeof commands[1] === "undefined") ? messages.cthpoem : randomDialogue(dialogues.poem, commands[1]);
+            message.channel.sendMessage(response);
             break;
         case "magic8ball":
-            var response = (typeof commands[1] === "undefined") ? messages.magicfail : randomDialogue(dialogues.magicball, "");
+            var response = (typeof commands[1] === "undefined") ? messages.magicfail : randomDialogue(dialogues.magicball, commands[1]);
             message.channel.sendMessage(response);
             break;
         case "appreciate":  /* This is such hacky code please forgive me! */
-            var name = (commands[1] === "me") ? message.author.username : commands[1];
+            var name = (typeof commands[1] === "undefined" || commands[1] === "me") ? message.author.username : commands[1];
             var responseA = randomDialogue(dialogues.appreciate, name);
             var responseB = randomDialogue(dialogues.appreciate, name);
             var responseC = randomDialogue(dialogues.appreciate, name);
