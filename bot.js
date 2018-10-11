@@ -192,7 +192,7 @@ bot.on('message', message => {
             message.channel.sendMessage(responseA + " " + responseB + " " + responseC);
             break;
         case "goodnight":
-            var msg = (typeof commands[1] === "undefined") ? messages.cthpoem : messages.night.replace("{0}", commands[1]);
+            var msg = (typeof commands[1] === "undefined") ? messages.nightfail.replace("{0}", message.author.username) : messages.night.replace("{0}", commands[1]);
             message.channel.sendMessage(msg);
             break;
         case "sharky":
