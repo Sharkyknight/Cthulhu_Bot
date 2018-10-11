@@ -208,7 +208,7 @@ bot.on('message', message => {
             var msg = "Ehh..";
             for (var i=0; i<commands.length; i++){
                 var temp = commands[i].toLowerCase();
-                if (temp.includes("jojo") || temp.includes("sharky") || temp.includes("carso") || temp == "me" || temp.includes("paste")) {
+                if (temp.includes("jojo") || temp.includes("sharky") || temp.includes("carso") || temp == "me" || temp == "too" || temp.includes("paste")) {
                     msg = "Very much so!";
                     break;
                 }
