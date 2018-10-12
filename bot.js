@@ -15,11 +15,11 @@ bot.on('message', message => {
     *   obj: The object to be checked for the jpg attachment
     * Return
     *   True if obj is a jpg, otherwise false
-    *
+    */
     function imageCheck(obj){
         var url = obj.url;
         return (url.indexOf("jpg", url.length - "jpg".length) !== -1;)
-    }*/
+    }
     
   /** Testing
     if (message.attachments.size > 0){
@@ -30,9 +30,8 @@ bot.on('message', message => {
     
     if (!message.content.startsWith(PREFIX)) {
         if (message.author.username === "Carsomyr" && message.channel.name == "general"){
-            message.channel.sendMessage("TestA");
-            if (message.attachments.size > 0){
-                message.channel.sendMessage("TestB");
+            if (message.attachments.size > 0 && imageCheck(message.attachments[0])){
+                message.channel.sendMessage("Test");
             }
         }
         return;
