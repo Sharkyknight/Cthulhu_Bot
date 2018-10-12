@@ -91,8 +91,8 @@ bot.on('message', message => {
     
     if (!message.content.startsWith(PREFIX)) {
         if (message.author.username === user2 && message.channel.name == "general"){
-            message.channel.sendMessage("@" + message.author.id);
-            message.channel.sendMessage("\@" + message.author.id);
+            message.channel.sendMessage("<@" + message.author.id + ">");
+            message.channel.sendMessage("<\@" + message.author.id + ">");
         }    
         if (message.author.username === "Alerik" && message.channel.name == "selfies-pls"){
             if (message.attachments.size > 0){
