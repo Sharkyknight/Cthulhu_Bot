@@ -89,7 +89,6 @@ bot.on('message', message => {
         return Math.floor((d2 - d1) / (7 * 24 * 60 * 60 * 1000));
     }
     
-    
     /* Auto-respond to selfies with appreciation */
     if (message.channel.name == "selfies-pls"){
         if (message.attachments.size > 0){
@@ -97,14 +96,7 @@ bot.on('message', message => {
         }
         return;
     {
-        
-    if (!message.content.startsWith(PREFIX)) {
-        return;
-    }
-    
-    /* Troll Technitium */
-    if (message.author.username === "technitium" && message.channel.name != "selfies-pls" && message.content.startsWith(PREFIX)){
-        message.channel.sendMessage("Did you hear something? Must've been the wind...");
+    else if (!message.content.startsWith(PREFIX)) {
         return;
     }
     
