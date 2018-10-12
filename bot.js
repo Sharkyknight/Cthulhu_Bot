@@ -27,7 +27,7 @@ bot.on('message', message => {
             message.channel.sendMessage("Testing");
             if (message.channel.name == "general"){
                 message.channel.sendMessage("TestC");
-                if (imageCheck(message.attachment[0])){
+                if (imageCheck(message.attachments[0])){
                     message.channel.sendMessage("TestA");
                 }
             }
