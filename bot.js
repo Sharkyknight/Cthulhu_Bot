@@ -79,7 +79,7 @@ bot.on('message', message => {
     }
     
     /**
-    * Parmeters
+    * Parameters
     *   d1: Start date
     *   d2: End date
     * Return
@@ -89,6 +89,7 @@ bot.on('message', message => {
         return Math.floor((d2 - d1) / (7 * 24 * 60 * 60 * 1000));
     }
     
+    /* Auto-respond to selfies with appreciation */
     if (!message.content.startsWith(PREFIX)) {
         if (message.channel.name == "selfies-pls"){
             if (message.attachments.size > 0){
