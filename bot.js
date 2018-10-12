@@ -32,11 +32,11 @@ bot.on('message', message => {
         return (url.indexOf("jpg", url.length - "jpg".length) !== -1;)
     }
     
-    var attach = message.attachment[0];
-    if (attach != "null"){
+    if (message.attachment[0] != "null"){
+        message.channel.sendMessage("Testing");
         if (message.author.name == "Carsomyr" && message.channel.name == "general"){
             message.channel.sendMessage("TestC");
-            if (imageCheck(attach)){
+            if (imageCheck(message.attachment[0])){
                 message.channel.sendMessage("TestA");
             }
             message.channel.sendMessage("TestB");
