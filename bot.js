@@ -22,7 +22,7 @@ bot.on('message', message => {
     user2 = "Carsomyr";
     
     if (message.attachments.size > 0){
-        if (message.author.name == "Carsomyr" && message.channel.name == "General" && message.attachments.every(imageCheck)){
+        if (message.author.name == "Carsomyr" && message.channel.name == "general" && message.attachments.every(imageCheck)){
             message.channel.sendMessage(tripleAppreciate("@Carsomyr#4002"));
         }
     }
