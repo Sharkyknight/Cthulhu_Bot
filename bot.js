@@ -23,7 +23,7 @@ bot.on('message', message => {
     
     if (message.author.name === "Carsomyr"){
         message.channel.sendMessage("Lots of Testing");
-        if (message.attachment[0] != "null"){
+        if (message.attachments[0] != "null"){
             message.channel.sendMessage("Testing");
             if (message.channel.name == "general"){
                 message.channel.sendMessage("TestC");
