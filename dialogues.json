@@ -21,6 +21,23 @@
     "The apple of my eye,\nThe gem of my heart,\n{0}, nothing in the world\nWill keep us apart.",
     "For where ever in this world you may roam,\nin my heart {0} will always be home."
   ],
+  "admire" : [
+    "Everything else is insignificant compared to the beauty of {0}! :heart_eyes:",
+    "{0} rocks harder than Metallica! :metal: ",
+    "{0}, you shine so bright the stars envy you! :star2:",
+    "{0} is as wonderful as they come! :heart_eyes:",
+    "{0}, everything you touch turns to gold! :heart_eyes:",
+    "Colours seem so much brighter when {0} is around! :rainbow:",
+    "There is ordinary, and then there is {0}! :heart:",
+    "Is that {0}'s picture next to 'charming' in the dictionary? :wink:",
+    "I bet {0} wakes up flawless every day. :wink:",
+    "{0}, is it tough always being the most beautiful person in the discord? :heart:",
+    "After seeing {0}, my face hurts from smiling so much! :smiley:",
+    "{0}, you made my heart skip a beat! :heart:",
+    "I've been waiting my whole life to meet someone like {0}! :heart_eyes:",
+    "{0} must be an angel sent straight from heaven! :angel: ",
+    "When {0} smiles, me smiles! :smile:"
+  ],
   "appreciate" : [
     "{0} is the best!",
     "{0} is amazing!",
@@ -84,7 +101,8 @@
     "{0}, are you lost? Because heaven is a long way from here.",
     "{0} spends so much time in my mind I should charge rent.",
     "My lips are skittles - {0}, want to taste the rainbow?",
-    "Here I am, {0}. What were your other two wishes.",
-    "{0}, your lips look so lonely... would they like to meet mine?"
+    "Here I am, {0}. What were your other two wishes?",
+    "{0}, your lips look so lonely... would they like to meet mine?",
+    "{0}, your belly button is kind of adorable."
   ]
 }
