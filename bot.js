@@ -154,7 +154,7 @@ bot.on('message', message => {
             message.channel.sendMessage(messages.rebootB);
             break;
         case "free":
-            var date = new Date();
+            var date = getClock();
             var day = date.getDay();
             if (day == 0) { // Sunday
                 message.channel.sendMessage(messages.blacksmith);
