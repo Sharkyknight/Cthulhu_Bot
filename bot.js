@@ -10,22 +10,13 @@ bot.on('ready', () => {
 });
 
 bot.on('message', message => {
-    if (!message.content.startsWith(PREFIX)) {
-        if (message.author.username === "Carsomyr" && message.channel.name == "general"){
-            if (message.attachments.size > 0){
-                message.channel.sendMessage("Test");
-            }
-        }
-        return;
-    }
-    
     var commands = message.content.substring(PREFIX.length).split(" ");
     var dialogues = require("./dialogues.json");
     var messages = require("./messages.json");
     
     user1 = "Sharkyknight";
     user2 = "Carsomyr";
-    
+        
     /**
     * Parameters
     *   obj: JSON object where all values are strings
@@ -96,6 +87,15 @@ bot.on('message', message => {
     */
     function weeksBetween(d1, d2) {
         return Math.floor((d2 - d1) / (7 * 24 * 60 * 60 * 1000));
+    }
+    
+    if (!message.content.startsWith(PREFIX)) {
+        /*if (message.author.username === "Alerik" && message.channel.name == "selfies-pls"){
+            if (message.attachments.size > 0){
+                message.channel.sendMessage(tripleAppreciate("@Alerik#3393"));
+            }
+        }*/
+        return;
     }
     
     switch (commands[0].toLowerCase()) {
