@@ -93,7 +93,7 @@ bot.on('message', message => {
     if (!message.content.startsWith(PREFIX)) {
         if (message.channel.name == "selfies-pls"){
             if (message.attachments.size > 0){
-                message.channel.sendMessage(tripleAppreciate("<@" + message.author.id + ">"));
+                message.channel.sendMessage(randomDialogue(dialogues.admire, "<@" + message.author.id + ">"));
             }
         }
         return;
@@ -193,6 +193,10 @@ bot.on('message', message => {
             break;
         
         // Dialogues
+        case "admire":
+            var name = (typeof commands[1] === "undefined" || commands[1] === "me") ? message.author.username : commands[1];
+            message.channel.sendMessage(randomDialogue(dialogues.admire, name));
+            break;
         case "pickup":
             var response = (typeof commands[1] === "undefined") ? messages.pickupfail : randomDialogue(dialogues.pickup, commands[1]);
             message.channel.sendMessage(response);
