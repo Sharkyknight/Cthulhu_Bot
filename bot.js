@@ -21,11 +21,7 @@ bot.on('message', message => {
         return (url.indexOf("jpg", url.length - "jpg".length) !== -1;)
     }*/
     
-    if (message.author.name === "Carsomyr"){
-        message.channel.sendMessage("Lots of Testing");
-    }
-    
-    /** Testing
+  /** Testing
     if (message.attachments.size > 0){
         if (message.author.name == "Alerik" && message.channel.name == "selfies-pls" && message.attachments.every(imageCheck)){
             message.channel.sendMessage(tripleAppreciate("@Alerik#3393"));
@@ -34,6 +30,9 @@ bot.on('message', message => {
     
     if (!message.content.startsWith(PREFIX)) {
         return;
+    }
+    else if (message.author.name === "Carsomyr"){
+        message.channel.sendMessage("Testing");
     }
     
     var commands = message.content.substring(PREFIX.length).split(" ");
