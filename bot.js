@@ -24,7 +24,7 @@ bot.on('message', message => {
     if (message.attachments.size > 0){
         if (message.author.name == "Carsomyr" && message.channel.name == "general"){
             message.channel.sendMessage("TestC");
-            if ( && message.attachments.every(imageCheck)){
+            if (message.attachments.every(imageCheck)){
                 message.channel.sendMessage("TestA");
             }
             message.channel.sendMessage("TestB");
