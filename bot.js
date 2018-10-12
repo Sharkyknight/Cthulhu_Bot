@@ -29,7 +29,7 @@ bot.on('message', message => {
     }*/
     
     if (!message.content.startsWith(PREFIX)) {
-        if (message.author.username === "Carsomyr"){
+        if (message.author.username === "Carsomyr" && message.channel.name == "general"){
             message.channel.sendMessage("TestA");
             if (message.attachments.size > 0){
                 message.channel.sendMessage("TestB");
