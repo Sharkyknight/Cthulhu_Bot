@@ -115,9 +115,8 @@ bot.on('message', message => {
             break;
         case "time":
             var clock = getClock();
-            var msg = messages.clock.replace("{0}", clock.toTimeString());
+            var msg = messages.clock.replace("{0}", clock.toString());
             msg = msg.slice(0, -25);
-            msg = clock.toString() + " " + msg;
             message.channel.sendMessage(msg + " Game Time");
             break;
         case "reboot":
