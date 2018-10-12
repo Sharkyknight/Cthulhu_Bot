@@ -64,7 +64,7 @@ bot.on('message', message => {
     */
     function getClock(){
         var clock = new Date();
-        if (clock.getHours < 8){            // Remove 8 hours from current time
+        if (clock.getHours < 7){            // Remove 8 hours from current time
             var timern = clock.getHours();
             var temp = clock.getDate()-1;
             clock.setDate(temp);
