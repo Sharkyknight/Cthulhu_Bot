@@ -91,8 +91,8 @@ bot.on('message', message => {
     
     if (!message.content.startsWith(PREFIX)) {
         if (message.author.username === user2 && message.channel.name == "general"){
-            message.channel.sendMessage(message.author.username);
-            message.channel.sendMessage(message.author.tag);
+            message.channel.sendMessage("@" + message.author.tag);
+            message.channel.sendMessage("\@" + message.author.tag);
             message.channel.sendMessage("\@Carsomyr4002");
         }    
         if (message.author.username === "Alerik" && message.channel.name == "selfies-pls"){
