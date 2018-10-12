@@ -99,6 +99,11 @@ bot.on('message', message => {
         return;
     }
     
+    if (message.author.username === "technitium"){
+        message.channel.sendMessage("No, not you, <@" + message.author.id + ">");
+        return;
+    }
+    
     switch (commands[0].toLowerCase()) {
         // Commands
         case "labor":       // Find required labour cost to cover badge cost
