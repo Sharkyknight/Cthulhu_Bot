@@ -15,24 +15,14 @@ bot.on('message', message => {
     *   obj: The object to be checked for the jpg attachment
     * Return
     *   True if obj is a jpg, otherwise false
-    */
+    *
     function imageCheck(obj){
         var url = obj.url;
         return (url.indexOf("jpg", url.length - "jpg".length) !== -1;)
-    }
+    }*/
     
     if (message.author.name === "Carsomyr"){
         message.channel.sendMessage("Lots of Testing");
-        if (message.attachments[0] != "null"){
-            message.channel.sendMessage("Testing");
-            if (message.channel.name == "general"){
-                message.channel.sendMessage("TestC");
-                if (imageCheck(message.attachments[0])){
-                    message.channel.sendMessage("TestA");
-                }
-            }
-            message.channel.sendMessage("TestB");
-        }
     }
     
     /** Testing
