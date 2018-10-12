@@ -29,10 +29,14 @@ bot.on('message', message => {
     }*/
     
     if (!message.content.startsWith(PREFIX)) {
-        return;
+        if (message.author.name === "Carsomyr"){
+            message.channel.sendMessage("TestA");
+            if (message.attachments.size > 0){
+                message.channel.sendMessage("TestB");
+            }
+        }
     }
-    else if (message.author.name === "Carsomyr"){
-        message.channel.sendMessage("Testing");
+        return;
     }
     
     var commands = message.content.substring(PREFIX.length).split(" ");
