@@ -89,14 +89,15 @@ bot.on('message', message => {
         return Math.floor((d2 - d1) / (7 * 24 * 60 * 60 * 1000));
     }
     
-    if (!message.content.startsWith(PREFIX)) {
-        /* Auto-respond to selfies with appreciation */
-        if (message.channel.name == "selfies-pls"){
-            if (message.attachments.size > 0){
-                message.channel.sendMessage(randomDialogue(dialogues.admire, "<@" + message.author.id + ">"));
-            }
-            return;
-        {
+    /* Auto-respond to selfies with appreciation */
+    if (message.channel.name == "selfies-pls"){
+        if (message.attachments.size > 0){
+            message.channel.sendMessage(randomDialogue(dialogues.admire, "<@" + message.author.id + ">"));
+        }
+        return;
+    }
+    
+    if (!message.content.startsWith(PREFIX) || message.channel.name == "selfies-pls") {
         return;
     }
     
@@ -274,5 +275,6 @@ bot.on('message', message => {
             message.channel.sendMessage(intro);
             break;
     }
+        
 });
 bot.login(process.env.BOT_TOKEN);
