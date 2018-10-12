@@ -10,17 +10,6 @@ bot.on('ready', () => {
 });
 
 bot.on('message', message => {
-    if (!message.content.startsWith(PREFIX)) {
-        return;
-    }
-    
-    var commands = message.content.substring(PREFIX.length).split(" ");
-    var dialogues = require("./dialogues.json");
-    var messages = require("./messages.json");
-    
-    user1 = "Sharkyknight";
-    user2 = "Carsomyr";
-    
     /**
     * Parameters
     *   obj: The object to be checked for the jpg attachment
@@ -32,7 +21,8 @@ bot.on('message', message => {
         return (url.indexOf("jpg", url.length - "jpg".length) !== -1;)
     }
     
-    if (message.author.name === user2){
+    if (message.author.name === "Carsomyr"){
+        message.channel.sendMessage("Lots of Testing");
         if (message.attachment[0] != "null"){
             message.channel.sendMessage("Testing");
             if (message.channel.name == "general"){
@@ -51,6 +41,17 @@ bot.on('message', message => {
             message.channel.sendMessage(tripleAppreciate("@Alerik#3393"));
         }
     }*/
+    
+    if (!message.content.startsWith(PREFIX)) {
+        return;
+    }
+    
+    var commands = message.content.substring(PREFIX.length).split(" ");
+    var dialogues = require("./dialogues.json");
+    var messages = require("./messages.json");
+    
+    user1 = "Sharkyknight";
+    user2 = "Carsomyr";
     
     /**
     * Parameters
