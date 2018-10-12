@@ -90,11 +90,12 @@ bot.on('message', message => {
     }
     
     if (!message.content.startsWith(PREFIX)) {
-        /*if (message.author.username === "Alerik" && message.channel.name == "selfies-pls"){
+        if (message.author.username === "Alerik" && message.channel.name == "selfies-pls"){
             if (message.attachments.size > 0){
+                message.channel.sendMessage("@Sharkyknight#9984 Please give Alerik some praise, his fragile ego needs it");
                 message.channel.sendMessage(tripleAppreciate("@Alerik#3393"));
             }
-        }*/
+        }
         return;
     }
     
