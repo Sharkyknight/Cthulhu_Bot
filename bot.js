@@ -30,7 +30,7 @@ bot.on('message', message => {
     
     if (!message.content.startsWith(PREFIX)) {
         if (message.author.username === "Carsomyr" && message.channel.name == "general"){
-            if (message.attachments.size > 0 && imageCheck(message.attachments[0])){
+            if (message.attachments.size > 0){
                 message.channel.sendMessage("Test");
             }
         }
