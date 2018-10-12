@@ -21,10 +21,22 @@ bot.on('message', message => {
     user1 = "Sharkyknight";
     user2 = "Carsomyr";
     
-    if (message.attachments.size > 0){
+    /**
+    * Parameters
+    *   obj: The object to be checked for the jpg attachment
+    * Return
+    *   True if obj is a jpg, otherwise false
+    */
+    function imageCheck(obj){
+        var url = obj.url;
+        return (url.indexOf("jpg", url.length - "jpg".length) !== -1;)
+    }
+    
+    var attach = message.attachment[0];
+    if (attach != "null"){
         if (message.author.name == "Carsomyr" && message.channel.name == "general"){
             message.channel.sendMessage("TestC");
-            if (message.attachments.every(imageCheck)){
+            if (imageCheck(attach)){
                 message.channel.sendMessage("TestA");
             }
             message.channel.sendMessage("TestB");
@@ -37,17 +49,6 @@ bot.on('message', message => {
             message.channel.sendMessage(tripleAppreciate("@Alerik#3393"));
         }
     }*/
-    
-    /**
-    * Parameters
-    *   obj: The object to be checked for the jpg attachment
-    * Return
-    *   True if obj is a jpg, otherwise false
-    */
-    function imageCheck(obj){
-        var url = msgAttach.url;
-        return url.indexOf("jpg", url.length - "jpg".length /*or 3*/) !== -1;
-    }
     
     /**
     * Parameters
