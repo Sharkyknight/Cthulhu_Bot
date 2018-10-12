@@ -21,6 +21,30 @@ bot.on('message', message => {
     user1 = "Sharkyknight";
     user2 = "Carsomyr";
     
+    if (message.attachments.size > 0){
+        if (message.author.name == "Carsomyr" && message.channel.name == "General" && message.attachments.every(imageCheck)){
+            message.channel.sendMessage(tripleAppreciate("@Carsomyr#4002"));
+        }
+    }
+    
+    /** Testing
+    if (message.attachments.size > 0){
+        if (message.author.name == "Alerik" && message.channel.name == "selfies-pls" && message.attachments.every(imageCheck)){
+            message.channel.sendMessage(tripleAppreciate("@Alerik#3393"));
+        }
+    }*/
+    
+    /**
+    * Parameters
+    *   obj: The object to be checked for the jpg attachment
+    * Return
+    *   True if obj is a jpg, otherwise false
+    */
+    function imageCheck(obj){
+        var url = msgAttach.url;
+        return url.indexOf("jpg", url.length - "jpg".length /*or 3*/) !== -1;
+    }
+    
     /**
     * Parameters
     *   obj: JSON object where all values are strings
@@ -41,6 +65,25 @@ bot.on('message', message => {
             }
             return dialog;
         }
+    }
+    
+    /**
+    * Pls forgive me this is hacky
+    * Parameters
+    *   name: string of name for person to appreciate
+    * Return
+    *   String of appreciates
+    */
+    function tripleAppreciate(name){
+        var responseA = randomDialogue(dialogues.appreciate, name);
+        var responseB = randomDialogue(dialogues.appreciate, name);
+        var responseC = randomDialogue(dialogues.appreciate, name);
+        while (responseA === responseB || responseB == responseC || responseA == responseC){
+            responseA = randomDialogue(dialogues.appreciate, name);
+            responseB = randomDialogue(dialogues.appreciate, name);
+            responseC = randomDialogue(dialogues.appreciate, name);
+        }
+        return (responseA + " " + responseB + " " + responseC);
     }
 
     /**
@@ -180,17 +223,10 @@ bot.on('message', message => {
             var response = (typeof commands[1] === "undefined") ? messages.magicfail : randomDialogue(dialogues.magicball, commands[1]);
             message.channel.sendMessage(response);
             break;
-        case "appreciate":  /* This is such hacky code please forgive me! */
+        case "appreciate":
             var name = (typeof commands[1] === "undefined" || commands[1] === "me") ? message.author.username : commands[1];
-            var responseA = randomDialogue(dialogues.appreciate, name);
-            var responseB = randomDialogue(dialogues.appreciate, name);
-            var responseC = randomDialogue(dialogues.appreciate, name);
-            while (responseA === responseB || responseB == responseC || responseA == responseC){
-                responseA = randomDialogue(dialogues.appreciate, name);
-                responseB = randomDialogue(dialogues.appreciate, name);
-                responseC = randomDialogue(dialogues.appreciate, name);
-            }
-            message.channel.sendMessage(responseA + " " + responseB + " " + responseC);
+            var msg = tripleAppreciate(name);
+            message.channel.sendMessage(msg);
             break;
         case "goodnight":
             var msg = (typeof commands[1] === "undefined") ? messages.nightfail.replace("{0}", message.author.username) : messages.night.replace("{0}", commands[1]);
