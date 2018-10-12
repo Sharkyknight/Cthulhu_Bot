@@ -100,7 +100,7 @@ bot.on('message', message => {
     }
     
     if (message.author.username === "technitium"){
-        message.channel.sendMessage("No, not you, <@" + message.author.id + ">");
+        message.channel.sendMessage("Did anyone hear anything? Must've been the wind...");
         return;
     }
     
