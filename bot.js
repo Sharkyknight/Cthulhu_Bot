@@ -90,7 +90,7 @@ bot.on('message', message => {
     }
     
     if (!message.content.startsWith(PREFIX)) {
-        if (message.author.username === "Alerik" && message.channel.name == "selfies-pls"){
+        if (message.channel.name == "selfies-pls"){
             if (message.attachments.size > 0){
                 message.channel.sendMessage(tripleAppreciate("<@" + message.author.id + ">"));
             }
