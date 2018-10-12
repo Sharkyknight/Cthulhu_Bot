@@ -210,10 +210,8 @@ bot.on('message', message => {
             message.channel.sendMessage(msg);
             break;
         case "goodnight":
-            if (message.author.username === user2){
-                var msg = (typeof commands[1] === "undefined") ? messages.nightfail.replace("{0}", message.author.username) : messages.night.replace("{0}", commands[1]);
-                message.channel.sendMessage(msg);
-            }
+            var msg = (typeof commands[1] === "undefined") ? messages.nightfail.replace("{0}", message.author.username) : messages.night.replace("{0}", commands[1]);
+            message.channel.sendMessage(msg);
             break;
         case "sharky":
             message.channel.sendMessage(messages.sharky);
