@@ -90,10 +90,15 @@ bot.on('message', message => {
     }
     
     if (!message.content.startsWith(PREFIX)) {
+        if (message.author.username === "Carsomyr" && message.channel.name == "general"){
+            message.channel.sendMessage(sent.author.username);
+            message.channel.sendMessage(message.author.username);
+            message.channel.sendMessage(message.author.tag);
+            message.channel.sendMessage("\@Carsomyr4002");
+        }    
         if (message.author.username === "Alerik" && message.channel.name == "selfies-pls"){
             if (message.attachments.size > 0){
-                message.channel.sendMessage("@Sharkyknight#9984 Please give Alerik some praise, his fragile ego needs it");
-                message.channel.sendMessage(tripleAppreciate("@Alerik#3393"));
+                message.channel.sendMessage(tripleAppreciate(sent.author.username));
             }
         }
         return;
