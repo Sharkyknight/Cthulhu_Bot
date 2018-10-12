@@ -90,13 +90,9 @@ bot.on('message', message => {
     }
     
     if (!message.content.startsWith(PREFIX)) {
-        if (message.author.username === user2 && message.channel.name == "general"){
-            message.channel.sendMessage("<@" + message.author.id + ">");
-            message.channel.sendMessage("<\@" + message.author.id + ">");
-        }    
         if (message.author.username === "Alerik" && message.channel.name == "selfies-pls"){
             if (message.attachments.size > 0){
-                message.channel.sendMessage(tripleAppreciate(message.sent.author.username));
+                message.channel.sendMessage(tripleAppreciate("<@" + message.author.id + ">"));
             }
         }
         return;
@@ -214,8 +210,10 @@ bot.on('message', message => {
             message.channel.sendMessage(msg);
             break;
         case "goodnight":
-            var msg = (typeof commands[1] === "undefined") ? messages.nightfail.replace("{0}", message.author.username) : messages.night.replace("{0}", commands[1]);
-            message.channel.sendMessage(msg);
+            if (message.author.username === user2){
+                var msg = (typeof commands[1] === "undefined") ? messages.nightfail.replace("{0}", message.author.username) : messages.night.replace("{0}", commands[1]);
+                message.channel.sendMessage(msg);
+            }
             break;
         case "sharky":
             message.channel.sendMessage(messages.sharky);
