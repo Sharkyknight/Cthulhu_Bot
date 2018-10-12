@@ -90,7 +90,7 @@ bot.on('message', message => {
     }
     
     /* Auto-respond to selfies with appreciation */
-    if (!message.content.startsWith(PREFIX)) {
+    if (!message.content.startsWith(PREFIX) && message.author.username === "technitium") {
         if (message.channel.name == "selfies-pls"){
             if (message.attachments.size > 0){
                 message.channel.sendMessage(randomDialogue(dialogues.admire, "<@" + message.author.id + ">"));
