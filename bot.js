@@ -123,7 +123,7 @@ bot.on('message', message => {
             var grog = parseInt(commands[2], 10) * 10;
             var rum = parseInt(commands[3], 10) * 6;
             var cheapest = (rum < grog && rum < swill) ? "Rum" : (grog < swill) ? "Grog" : "Swill";
-            var response = messages.rum.replace("{0}", rum).replace("{1}", grog).replace("{2}", swill).replace("{3}", cheapest);
+            var response = messages.rum.replace("{0}", swill).replace("{1}", grog).replace("{2}", rum).replace("{3}", cheapest);
             message.channel.sendMessage(response);
             break;
         case "labor":       // Find required labour cost to cover badge cost
