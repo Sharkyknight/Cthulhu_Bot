@@ -107,7 +107,11 @@ bot.on('message', message => {
             var swill = parseInt(commands[1], 10);
             var grog = parseInt(commands[2], 10);
             var rum = parseInt(commands[3], 10);
-            if (swill.isNaN() || grog.isNaN() || rum.isNaN() || swill < 1 || grog < 1 || rum < 1) {
+            if (swill.isNaN() || grog.isNaN() || rum.isNaN()) {
+                message.channel.sendMessage(messages.rumfail);
+                break;
+            }
+            else if (swill < 1 || grog < 1 || rum < 1){
                 message.channel.sendMessage(messages.rumfail);
                 break;
             }
