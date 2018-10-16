@@ -103,17 +103,18 @@ bot.on('message', message => {
     switch (commands[0].toLowerCase()) {
         // Commands
         case "rum":     // Calculate which alcohol is the best value
-            message.channel.sendMessage("Testing");
             var alcohol = [15, 10, 6];   // Swill, grog, rum
             message.channel.sendMessage("Parse int");
             var swill = parseInt(commands[1], 10);
             var grog = parseInt(commands[2], 10);
             var rum = parseInt(commands[3], 10);
-            /*message.channel.sendMessage("is NaN");
+            message.channel.sendMessage("is NaN");
             if (swill.isNaN() || grog.isNaN() || rum.isNaN()) {
                 message.channel.sendMessage(messages.rumfail);
                 break;
             }
+            message.channel.sendMessage("Testing");
+            /*
             else if (swill < 1 || grog < 1 || rum < 1){
                 message.channel.sendMessage(messages.rumfail);
                 break;
