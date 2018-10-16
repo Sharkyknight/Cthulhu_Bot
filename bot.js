@@ -199,7 +199,7 @@ bot.on('message', message => {
         // Dialogues
         case "feed":
             message.channel.sendMessage("A");
-            var food = admins.includes(message.author.username) ? commands[1] : messages.author.username;
+            var food = admins.includes(message.author.username) ? "TestTrue" : "TestFalse";
             message.channel.sendMessage("B");
             var response = messages.feed.replace("{0}", food);
             message.channel.sendMessage("C");
