@@ -103,27 +103,16 @@ bot.on('message', message => {
     switch (commands[0].toLowerCase()) {
         // Commands
         case "rum":     // Calculate which alcohol is the best value
-            var alcohol = [15, 10, 6];   // Swill, grog, rum
-            var swill = parseInt(commands[1], 10);
-            var grog = parseInt(commands[2], 10);
-            var rum = parseInt(commands[3], 10);
-            if (isNaN(swill) || isNaN(grog) || isNaN(rum)) {
+            var swill = parseInt(commands[1], 10) * 15;
+            var grog = parseInt(commands[2], 10) * 10;
+            var rum = parseInt(commands[3], 10) * 6;
+            if (isNaN(swill) || isNaN(grog) || isNaN(rum) || swill < 1 || grog < 1 || rum < 1) {
                 message.channel.sendMessage(messages.rumfail);
                 break;
             }
-            else if (swill < 1 || grog < 1 || rum < 1){
-                message.channel.sendMessage(messages.rumfail);
-                break;
-            }
-            message.channel.sendMessage("Test A");
-            swill = swill * 15;
-            grog = grog * 10;
-            rum = rum * 6;
-            message.channel.sendMessage("Test B");
             var cheapest = (rum < grog && rum < swill) ? "rum" : (grog < swill) ? "grog" : "swill";
-            message.channel.sendMessage("Test C");
-            //var response = messages.rum.replace("{0}", rum, "{1}", grog, "{2}", swill, "{3}", cheapest);
-            var response = messages.rum.replace("{0}", rum);
+            var response = messages.rum.replace("{0}", rum).replace("{2}", grog).replace("{2}", swill);
+            response = response.replace("{3}", cheapest)
             message.channel.sendMessage(response);
             break;
         case "labor":       // Find required labour cost to cover badge cost
