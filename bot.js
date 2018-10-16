@@ -14,6 +14,8 @@ bot.on('message', message => {
     var dialogues = require("./dialogues.json");
     var messages = require("./messages.json");
     
+    var admins = ["Carsomyr", "Sharkyknight"];
+    
     user1 = "Sharkyknight";
     user2 = "Carsomyr";
         
@@ -195,6 +197,10 @@ bot.on('message', message => {
             break;
         
         // Dialogues
+        case "feed":
+            var response = admins.includes(message.author.username) ? "true" : "false";
+            message.channel.sendMessage(response);
+            break;
         case "endlife":
             var seconds = parseInt(commands[1]);
             if (typeof seconds != "number"){
