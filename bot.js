@@ -14,7 +14,7 @@ bot.on('message', message => {
     var dialogues = require("./dialogues.json");
     var messages = require("./messages.json");
     
-    var admins = ["Carsomyr", "Sharkyknight"];
+    var admins = ["Sharkyknight", "Carsomy"];
     
     user1 = "Sharkyknight";
     user2 = "Carsomyr";
