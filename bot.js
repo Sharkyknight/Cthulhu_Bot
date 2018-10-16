@@ -103,7 +103,9 @@ bot.on('message', message => {
     switch (commands[0].toLowerCase()) {
         // Commands
         case "rum":     // Calculate which alcohol is the best value
+            message.channel.sendMessage("Array");
             var alcohol = [15, 10, 6];   // Swill, grog, rum
+            message.channel.sendMessage("Parse int");
             var swill = parseInt(commands[1], 10);
             var grog = parseInt(commands[2], 10);
             var rum = parseInt(commands[3], 10);
