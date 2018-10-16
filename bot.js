@@ -195,6 +195,19 @@ bot.on('message', message => {
             break;
         
         // Dialogues
+        case "endlife":
+            var seconds = parseInt(commands[1]);
+            if (typeof seconds != "number"){
+                message.channel.sendMessage(messages.endlifefail);
+                break;
+            }
+            if (commands[2] != "quick" && commands[2] != "slow"){
+                message.channel.sendMessage(messages.endlifefail);
+                break;
+            }
+            var deathtype = (commands[2] === "quick") ? "quick and painless" : "slow and painful";
+            var msg = (messages.endlife.replace("{0}", seconds));
+            message.channel.sendMessage(msg.replace("{1}", deathtype));
         case "admire":
             var name = (typeof commands[1] === "undefined" || commands[1] === "me") ? message.author.username : commands[1];
             message.channel.sendMessage(randomDialogue(dialogues.admire, name));
