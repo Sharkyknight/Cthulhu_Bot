@@ -198,11 +198,8 @@ bot.on('message', message => {
         
         // Dialogues
         case "feed":
-            message.channel.sendMessage("A");
-            var food = admins.includes(message.author.username) ? "TestTrue" : "TestFalse";
-            message.channel.sendMessage("B");
+            var food = admins.includes(message.author.username) ? commands[1] : message.author.username;
             var response = messages.feed.replace("{0}", food);
-            message.channel.sendMessage("C");
             message.channel.sendMessage(response);
             break;
         case "endlife":
