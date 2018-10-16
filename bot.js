@@ -106,7 +106,7 @@ bot.on('message', message => {
             var alcohol = [15, 10, 6];   // Swill, grog, rum
             var swill = alcohol[0] * parseInt(commands[1], 10);
             var grog = alcohol[1] * parseInt(commands[2], 10);
-            var rum = alcohol * parseInt(commands[3], 10);
+            var rum = alcohol[2] * parseInt(commands[3], 10);
             if (swill < 1 || grog < 1 || rum < 1){
                 message.channel.sendMessage(messages.rumfail);
             }
