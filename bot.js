@@ -18,6 +18,17 @@ bot.on('message', message => {
     
     /**
     * Parameters
+    *   str: string to be checked
+    * Return
+    *   true if the value is an integer > 0, false otherwise
+    */
+    function checkNum(str){
+        var num = parseInt(str, 10);
+        return (isNaN(num) && num > 0);
+    }
+    
+    /**
+    * Parameters
     *   obj: JSON object where all values are strings
     *   name: the name of the person to be inserted into the dialogue
     * Return
@@ -103,23 +114,26 @@ bot.on('message', message => {
     switch (commands[0].toLowerCase()) {
         // Commands
         case "rum":     // Calculate which alcohol is the best value
-            var swill = parseInt(commands[1], 10) * 15;
-            var grog = parseInt(commands[2], 10) * 10;
-            var rum = parseInt(commands[3], 10) * 6;
-            if (isNaN(swill) || isNaN(grog) || isNaN(rum) || swill < 1 || grog < 1 || rum < 1) {
+            // Check number is valid
+            if (!checkNum(commands[1]) || !checkNum(commands[2]) || !checkNum(commands[3])) {
                 message.channel.sendMessage(messages.rumfail);
                 break;
             }
+            var swill = parseInt(commands[1], 10) * 15;
+            var grog = parseInt(commands[2], 10) * 10;
+            var rum = parseInt(commands[3], 10) * 6;
             var cheapest = (rum < grog && rum < swill) ? "Rum" : (grog < swill) ? "Grog" : "Swill";
-            var response = messages.rum.replace("{0}", rum).replace("{1}", grog).replace("{2}", swill);
-            response = response.replace("{3}", cheapest)
+            var response = messages.rum.replace("{0}", rum).replace("{1}", grog).replace("{2}", swill).replace("{3}", cheapest);
             message.channel.sendMessage(response);
             break;
         case "labor":       // Find required labour cost to cover badge cost
+            if (!checkNum(commands[1])) {
+                message.channel.sendMessage(messages.invalidLabor);
+                break;
+            }
             var amount = parseInt(commands[1], 10);
-            var breakeven = (amount > 0) ? Math.ceil(((amount * 15) / (72 * 28))) : 0;      // Calculate cost to break even; 0 if invalid
-            var laborMsg = (breakeven > 0) ? messages.labor.replace("{0}", breakeven) : messages.invalidLabor;
-            message.channel.sendMessage(laborMsg);
+            var breakeven = Math.ceil(((amount * 15) / (72 * 28)));      // Calculate cost to break even
+            message.channel.sendMessage(messages.labor.replace("{0}", breakeven));
             break;
         case "smh":
             var numWeeks = weeksBetween(new Date("6/2/2018"), new Date());
