@@ -19,7 +19,7 @@
   "cthpoem" : "Ph'nglui mglw'nafh\nCthulhu R'lyeh wgah'nagl fhtagn.",
   "endlifefail" : "I need to know when and how. Please use:   *endlife (seconds) (quick/slow)",
   "DIALOGUES COMMENTS" : "",
-  "feed" : "/me devours {0}.";
+  "feed" : "/me devours {0}.",
   "endlife" : "Alright, I will be back to kill you in {0} seconds, and I will make it {1}.",
   "loveme" : "I'll always love you, {0}.",
   "sharky" : ":shark::shark::shark:",
