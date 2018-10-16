@@ -104,7 +104,7 @@ bot.on('message', message => {
         // Commands
         case "rum":     // Calculate which alcohol is the best value
             message.channel.sendMessage("Array");
-            var alcohol = [15, 10, 6];   // Swill, grog, rum
+            //var alcohol = [15, 10, 6];   // Swill, grog, rum
             message.channel.sendMessage("Parse int");
             var swill = parseInt(commands[1], 10);
             var grog = parseInt(commands[2], 10);
@@ -119,9 +119,9 @@ bot.on('message', message => {
                 break;
             }
             message.channel.sendMessage("Test A");
-            swill = swill * alcohol[0];
-            grog = grog * alcohol[1];
-            rum = rum * alcohol[2];
+            swill = swill * 15;
+            grog = grog * 10;
+            rum = rum * 6;
             message.channel.sendMessage("Test B");
             var cheapest = (rum < grog && rum < swill) ? "rum" : (grog < swill) ? "grog" : "swill";
             message.channel.sendMessage("Test C");
