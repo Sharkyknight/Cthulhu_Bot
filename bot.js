@@ -102,6 +102,9 @@ bot.on('message', message => {
     
     switch (commands[0].toLowerCase()) {
         // Commands
+        case "rum":
+            // TO DO
+            break;
         case "labor":       // Find required labour cost to cover badge cost
             var amount = parseInt(commands[1], 10);
             var breakeven = (amount > 0) ? Math.ceil(((amount * 15) / (72 * 28))) : 0;      // Calculate cost to break even; 0 if invalid
@@ -201,11 +204,7 @@ bot.on('message', message => {
             break;
         case "endlife":
             var seconds = parseInt(commands[1]);
-            if (typeof seconds != "number"){
-                message.channel.sendMessage(messages.endlifefail);
-                break;
-            }
-            if (commands[2] != "quick" && commands[2] != "slow"){
+            if (typeof seconds != "number" || seconds < 1 || (commands[2] != "quick" && commands[2] != "slow")){
                 message.channel.sendMessage(messages.endlifefail);
                 break;
             }
@@ -213,7 +212,7 @@ bot.on('message', message => {
             var msg = (messages.endlife.replace("{0}", seconds));
             message.channel.sendMessage(msg.replace("{1}", deathtype));
             break;
-        case "admire":
+        case "admire":      // Autoresponse to selfies
             var name = (typeof commands[1] === "undefined" || commands[1] === "me") ? message.author.username : commands[1];
             message.channel.sendMessage(randomDialogue(dialogues.admire, name));
             break;
@@ -234,7 +233,7 @@ bot.on('message', message => {
             var msg = tripleAppreciate(name);
             message.channel.sendMessage(msg);
             break;
-        case "goodnight":
+        case "goodnight":       // Say goodnight to someone who logged off too quick
             var msg = (typeof commands[1] === "undefined") ? messages.nightfail.replace("{0}", message.author.username) : messages.night.replace("{0}", commands[1]);
             message.channel.sendMessage(msg);
             break;
@@ -247,7 +246,7 @@ bot.on('message', message => {
         case "loveme":
             message.channel.sendMessage(messages.loveme.replace("{0}", message.author.username));
             break;
-        case "cthulhu":
+        case "cthulhu":         // Any time the admins need Cthulhu to back them up
             var msg = "Ehh..";
             for (var i=0; i<commands.length; i++){
                 var temp = commands[i].toLowerCase();
