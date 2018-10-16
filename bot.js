@@ -104,13 +104,16 @@ bot.on('message', message => {
         // Commands
         case "rum":     // Calculate which alcohol is the best value
             var alcohol = [15, 10, 6];   // Swill, grog, rum
-            var swill = alcohol[0] * parseInt(commands[1], 10);
-            var grog = alcohol[1] * parseInt(commands[2], 10);
-            var rum = alcohol[2] * parseInt(commands[3], 10);
+            var swill = parseInt(commands[1], 10);
+            var grog = parseInt(commands[2], 10);
+            var rum = parseInt(commands[3], 10);
             if (swill.isNaN() || grog.isNaN() || rum.isNaN() || swill < 1 || grog < 1 || rum < 1) {
                 message.channel.sendMessage(messages.rumfail);
                 break;
             }
+            swill = swill * alcohol[0];
+            grog = grog * alcohol[1];
+            rum = rum * alcohol[2];
             var cheapest = (rum < grog && rum < swill) ? "rum" : (grog < swill) ? "grog" : "swill";
             var response = messages.rum.replace("{0}", rum, "{1}", grog, "{2}", swill, "{3}", cheapest);
             break;
