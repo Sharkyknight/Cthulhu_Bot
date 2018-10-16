@@ -104,17 +104,13 @@ bot.on('message', message => {
         // Commands
         case "rum":     // Calculate which alcohol is the best value
             var alcohol = [15, 10, 6];   // Swill, grog, rum
-            message.channel.sendMessage("Parse int");
             var swill = parseInt(commands[1], 10);
             var grog = parseInt(commands[2], 10);
             var rum = parseInt(commands[3], 10);
-            message.channel.sendMessage("is NaN");
-            if (swill.isNaN() || grog.isNaN() || rum.isNaN()) {
+            if (isNaN(swill) || isNaN(grog) || isNaN(rum)) {
                 message.channel.sendMessage(messages.rumfail);
                 break;
             }
-            message.channel.sendMessage("Testing");
-            /*
             else if (swill < 1 || grog < 1 || rum < 1){
                 message.channel.sendMessage(messages.rumfail);
                 break;
@@ -128,7 +124,7 @@ bot.on('message', message => {
             message.channel.sendMessage("Test C");
             //var response = messages.rum.replace("{0}", rum, "{1}", grog, "{2}", swill, "{3}", cheapest);
             var response = messages.rum.replace("{0}", rum);
-            message.channel.sendMessage(response);*/
+            message.channel.sendMessage(response);
             break;
         case "labor":       // Find required labour cost to cover badge cost
             var amount = parseInt(commands[1], 10);
