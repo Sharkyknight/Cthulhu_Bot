@@ -111,7 +111,7 @@ bot.on('message', message => {
                 break;
             }
             var cheapest = (rum < grog && rum < swill) ? "rum" : (grog < swill) ? "grog" : "swill";
-            var response = messages.rum.replace("{0}", rum).replace("{2}", grog).replace("{2}", swill);
+            var response = messages.rum.replace("{0}", rum).replace("{1}", grog).replace("{2}", swill);
             response = response.replace("{3}", cheapest)
             message.channel.sendMessage(response);
             break;
