@@ -1,0 +1,21 @@
+{
+    "trinket" : ["Assassin's belt", "Assassin's dagger", "Black handerchief", "Black king", "Caltrops", "Counterfeit coins", "Dark grimoire", "Decoder medallion", "Dirty laundry list", "Disguise kit", "Fake casino chips", "Forged documents", "Garrote", "Grappling hook", "Knucklebone dice", "Lockpick kit", "Marked cards", "Plunder bag", "Poison", "Poison darts", "Powdered unicorn horn", "Ransom note", "Raven's feather", "Skeleton key", "Skull box", "Smoke bomb", "Stinking badges", "Stolen imperial plans", "Throwing Knives", "Wanted poster"],
+    "fox" : ["Patchy fox"],
+    "expedition" : ["Map to Captain Jane's Solid Barracks", "Map to Colonel Jones's Impervious Castle", "Map to Governor Bridget's Booming Settlement", "Map to Beastly Shane's Fallow Spit", "Deceitful Sheng's Scoured Drift", "Map to Careless Stickleback", "Map to Mutilated Bream", "Map to Lieutenant Victoria's Insurmountable Bunker", "Map to Lieutenant Elaine's Substantial Outpost", "Map to Captain Ernest's Unbeatable Fort"],
+    "charm" : ["Skellie charm (minor)", "Zombie charm (minor)", "Skellie charm (medium)", "Skellie charm(major)", "Zombie charm (medium)", "zombie charm (major)"],
+    "amulet" : ["Necromantic amulet", "Spectral Amulet", "Moon amulet", "Sanguine amulet", "Skeletal amulet"],
+    "compass" : ["Compass to Admiral Finius", "Compass to Azarbad the Great", "Compass to Barnabas the Pale", "Compass to Brynhild Skullsplitter", "Compass to Gretchen Goldfang", "Compass to Madam Yu Jian", "Compass to The Widow Queen", "Compass to Vargas the Mad"],
+    "smh" : ["Map to Ship-Crushing Doom of the Depths", "Map to Frightful Seas", "Map to Islet of Darkness and Tumult", "Map to Unnatural Cove of Danger", "Map to Cove of Depravity and Fear", "Map to Abandoned Commons", "Map to Flooded Sanctuary of Ophion", "Map to Faded Ruins", "Map to Rocky Outpost", "Map to Dread Islet of Terror", "Map to Eldritch Reefs"],
+    "piggy" : ["Black Piggy Bank"],
+    "smuggler" : ["Smuggler Banner", "Smuggler Powder Bag", "Smuggler Pyramid of Barrels", "Smuggler Barrel", "Smuggler Arms Crate", "Smuggled Arms", "Large Smuggler Crate", "Mess Table with Cloth"],
+    "vampire" : ["Vampire Bookcase", "Vampire Banner", "Vampire Basin", "Vampiric Candelabra", "Wooden Coffin"],
+    "wax" : ["Dastardly mustache wax"],
+    "tophat" : ["Top hat"],
+    "bandana" : ["Masked Bandana"],
+    "dread" : ["Dread Mask"],
+    "emptypiggy" : ["Empty black piggy bank"],
+    "design" : ["Rogue sloop (design)", "Rogue Dhow (design)", "Rogue War Brig (design)", "Rogue War Frigate (design)", "Rogue Grand Frigate (design)"],
+    "pet" : ["Black cat", "Black small dog", "Black pig", "Black seal", "Black rabbit", "Black sea turtle"],
+    "chroma" : ["Black chroma"],
+    "parrot" : ["Skeletal parrot"]
+}
