@@ -12,7 +12,7 @@ bot.on('ready', () => {
 bot.on('message', message => {
     var commands = message.content.substring(PREFIX.length).split(" ");
     var admins = ["Sharkyknight", "Carsomyr"];
-    
+    /*
     var responses = require("./responses.json");
     var dialogues = require("./entertainment/dialogues.json");
     var blackBox = require('./entertainment/blackBox.js');
@@ -20,10 +20,12 @@ bot.on('message', message => {
     var timechecks = require('./commands/timechecks.js');
     var calculators = require('./commands/calculators.js');
     var misc = require("./entertainment/misc.json");
+    */
 
     var selfieChannel = "selfies-pls";
     var userIsAdmin = admins.includes(message.author.username);   // User has admin permissions
-    var targetName = (typeof commands[1] === "undefined" || commands[1] === "me") ? message.author.username : commands[1];
+    //var targetName = (typeof commands[1] === "undefined" || commands[1] === "me") ? message.author.username : commands[1];
+    
     message.channel.sendMessage("Testing");
 
     /* Auto-respond to selfies with appreciation */
@@ -39,12 +41,12 @@ bot.on('message', message => {
         return;
     }
     
-    switch (commands[0].toLowerCase()) {
+/*    switch (commands[0].toLowerCase()) {
         // Commands
         case "rum":         // Calculate which alcohol is the best value
             message.channel.sendMessage(calculators.getRum(commands[1], commands[2], commands[3]));
             break;
-/*        case "labor":       // Find required labour cost to cover badge cost
+        case "labor":       // Find required labour cost to cover badge cost
             message.channel.sendMessage(calculators.getLabor(commands[1]));
             break;
         case "smh":
@@ -141,8 +143,8 @@ bot.on('message', message => {
         case "001introduction":
             var intro = (message.author.username == admins[0]) ? responses.intro : responses.rejected;
             message.channel.sendMessage(intro);
-            break;*/
-    }
+            break;
+    }*/
         
 });
 bot.login(process.env.BOT_TOKEN);
