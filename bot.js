@@ -84,7 +84,7 @@ bot.on('message', message => {
             break;
         case "goodnight":       // Say goodnight to someone who logged off too quick
             if (typeof commands[1] === "undefined") message.channel.sendMessage(responses.nightfail.replace("{0}", targetName));
-            message.channel.sendMessage(responses.night.replace("{0}", targetName));
+            else message.channel.sendMessage(responses.night.replace("{0}", targetName));
             break;
         case "feed":
             var food = userIsAdmin ? commands[1] : message.author.username;
