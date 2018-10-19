@@ -18,8 +18,8 @@ bot.on('message', message => {
     var blackBox = require("./entertainment/blackBox.js");
     var complement = require("./entertainment/complement.js");
     var timechecks = require("./commands/timechecks.js");
-    /*var calculators = require("./commands/calculators.js");
-    var misc = require("./entertainment/misc.json");*/
+    var calculators = require("./commands/calculators.js");
+    var misc = require("./entertainment/misc.js");
 
     var selfieChannel = "selfies-pls";
     var userIsAdmin = admins.includes(message.author.username);   // User has admin permissions
@@ -44,7 +44,7 @@ bot.on('message', message => {
         case "test":
             message.channel.sendMessage("test");
             break;
-/*        case "rum":         // Calculate which alcohol is the best value
+        case "rum":         // Calculate which alcohol is the best value
             message.channel.sendMessage(calculators.getRum(commands[1], commands[2], commands[3]));
             break;
         case "labor":       // Find required labour cost to cover badge cost
@@ -144,7 +144,7 @@ bot.on('message', message => {
         case "001introduction":
             var intro = (message.author.username == admins[0]) ? responses.intro : responses.rejected;
             message.channel.sendMessage(intro);
-            break;*/
+            break;
     }
         
 });
