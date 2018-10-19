@@ -16,10 +16,10 @@ bot.on('message', message => {
     var responses = require("./responses.json");
     var dialogues = require("./entertainment/dialogues.json");
     var blackBox = require("./entertainment/blackBox.js");
-    var complement = require("./entertainment/complement.js");
+    /*var complement = require("./entertainment/complement.js");
     var timechecks = require("./commands/timechecks.js");
     var calculators = require("./commands/calculators.js");
-    var misc = require("./entertainment/misc.json");
+    var misc = require("./entertainment/misc.json");*/
 
     var selfieChannel = "selfies-pls";
     var userIsAdmin = admins.includes(message.author.username);   // User has admin permissions
