@@ -41,9 +41,6 @@ bot.on('message', message => {
     
     switch (commands[0].toLowerCase()) {
         // Commands
-        case "test":
-            message.channel.sendMessage("test");
-            break;
         case "rum":         // Calculate which alcohol is the best value
             message.channel.sendMessage(calculators.getRum(commands[1], commands[2], commands[3]));
             break;
