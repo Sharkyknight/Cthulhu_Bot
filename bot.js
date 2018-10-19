@@ -86,6 +86,7 @@ bot.on('message', message => {
             message.channel.sendMessage(complement.getDialogue("magicball", targetName));
             break;
         case "goodnight":       // Say goodnight to someone who logged off too quick
+            if (typeof commands[1] === "undefined") message.channel.sendMessage(responses.nightfail.replace("{0}", targetName));
             message.channel.sendMessage(responses.night.replace("{0}", targetName));
             break;
         case "feed":
