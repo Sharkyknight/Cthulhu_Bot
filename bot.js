@@ -41,13 +41,16 @@ bot.on('message', message => {
     
     switch (commands[0].toLowerCase()) {
         // Commands
+        case "test":
+            message.channel.sendMessage("test");
+            break;
         case "rum":         // Calculate which alcohol is the best value
             message.channel.sendMessage(calculators.getRum(commands[1], commands[2], commands[3]));
             break;
         case "labor":       // Find required labour cost to cover badge cost
             message.channel.sendMessage(calculators.getLabor(commands[1]));
             break;
-        case "smh":
+/*        case "smh":
             message.channel.sendMessage(timechecks.getSMH());
             break;
         case "time":
@@ -141,7 +144,7 @@ bot.on('message', message => {
         case "001introduction":
             var intro = (message.author.username == admins[0]) ? responses.intro : responses.rejected;
             message.channel.sendMessage(intro);
-            break;
+            break;*/
     }
         
 });
