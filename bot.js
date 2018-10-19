@@ -10,14 +10,14 @@ bot.on('ready', () => {
 });
 
 bot.on('message', message => {
-    const responses = require("./responses.json");
-    const dialogues = require("./entertainment/dialogues.json");
-    const blackBox = require('./entertainment/blackBox.js');
-    const complement = require('./entertainment/complement.js');
-    const timechecks = require('./commands/timechecks.js');
-    const calculators = require('./commands/calculators.js');
-    const misc = require("./entertainment/misc.json");
-    const admins = ["Sharkyknight", "Carsomyr"];
+    var responses = require("./responses.json");
+    var dialogues = require("./entertainment/dialogues.json");
+    var blackBox = require('./entertainment/blackBox.js');
+    var complement = require('./entertainment/complement.js');
+    var timechecks = require('./commands/timechecks.js');
+    var calculators = require('./commands/calculators.js');
+    var misc = require("./entertainment/misc.json");
+    var admins = ["Sharkyknight", "Carsomyr"];
 
     var selfieChannel = "selfies-pls";
     var commands = message.content.substring(PREFIX.length).split(" ");
