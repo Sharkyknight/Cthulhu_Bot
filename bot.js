@@ -26,7 +26,6 @@ bot.on('message', message => {
     var userIsAdmin = admins.includes(message.author.username);   // User has admin permissions
     //var targetName = (typeof commands[1] === "undefined" || commands[1] === "me") ? message.author.username : commands[1];
     
-    message.channel.sendMessage("Testing");
 
     /* Auto-respond to selfies with appreciation */
     if (message.channel.name == selfieChannel){
