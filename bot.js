@@ -12,7 +12,7 @@ bot.on('ready', () => {
 bot.on('message', message => {
     var commands = message.content.substring(PREFIX.length).split(" ");
     var admins = ["Sharkyknight", "Carsomyr"];
-    /*
+
     var responses = require("./responses.json");
     var dialogues = require("./entertainment/dialogues.json");
     var blackBox = require('./entertainment/blackBox.js');
@@ -20,7 +20,6 @@ bot.on('message', message => {
     var timechecks = require('./commands/timechecks.js');
     var calculators = require('./commands/calculators.js');
     var misc = require("./entertainment/misc.json");
-    */
 
     var selfieChannel = "selfies-pls";
     var userIsAdmin = admins.includes(message.author.username);   // User has admin permissions
@@ -40,7 +39,7 @@ bot.on('message', message => {
         return;
     }
     
-/*    switch (commands[0].toLowerCase()) {
+    switch (commands[0].toLowerCase()) {
         // Commands
         case "rum":         // Calculate which alcohol is the best value
             message.channel.sendMessage(calculators.getRum(commands[1], commands[2], commands[3]));
@@ -143,7 +142,7 @@ bot.on('message', message => {
             var intro = (message.author.username == admins[0]) ? responses.intro : responses.rejected;
             message.channel.sendMessage(intro);
             break;
-    }*/
+    }
         
 });
 bot.login(process.env.BOT_TOKEN);
