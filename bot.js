@@ -67,6 +67,9 @@ bot.on('message', message => {
             break;
         
         // Dialogues, with commands
+        case "bye":
+            // Get Timezone for associated name
+            break;
         case "admire":      // Autoresponse to selfies
             message.channel.sendMessage(complement.getDialogue("admire", targetName));
             break;
@@ -107,6 +110,9 @@ bot.on('message', message => {
             break;
         case "loveme":
             message.channel.sendMessage(responses.loveme.replace("{0}", message.author.username));
+            break;
+        case "flip" :
+            message.channel.sendMessage(misc.flipCoin((message.author.username == admins[1])));
             break;
         
         // Admin only
