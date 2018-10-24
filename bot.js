@@ -23,7 +23,8 @@ bot.on('message', message => {
 
     var selfieChannel = "selfies-pls";
     var userIsAdmin = admins.includes(message.author.username);   // User has admin permissions
-    var targetName = (typeof commands[1] === "undefined" || commands[1] === "me") ? message.author.username : (commands.splice(1, commands.length)).join(" ");
+    var cmds = commands.slice(0);
+    var targetName = (typeof commands[1] === "undefined" || commands[1] === "me") ? message.author.username : (cmds.splice(1, cmds.length)).join(" ");
     
 
     /* Auto-respond to selfies with appreciation */
