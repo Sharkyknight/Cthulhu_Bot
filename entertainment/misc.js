@@ -22,6 +22,13 @@ module.exports = {
         var response = (responses.endlife.replace("{0}", minutes).replace("{1}", deathtype));
         return response;
     },
+    flipCoin: function (isCarso){
+        if (isCarso){
+            return "Heads";
+        };
+        var int = Math.floor(Math.random() * 2);
+        return (int == 1) ? "Heads" : "Tails";
+    },
     cthulhu: function (isAdmin, commands){
         if (!isAdmin) return responses.rejected;
         var response = "Ehh..";

@@ -1,4 +1,13 @@
 const responses = require('./../responses.json');
+const moment = require('./../node_modules/moment/moment.js');
+//const tz = require('./../node_modules/moment-timezone/moment-timezone.js');
+
+/**
+ * Returns a moment object sec to YPP current time
+ */
+function getMoment(){
+    return moment(new Date());
+}
 
 /**
 * Return
@@ -32,6 +41,10 @@ function weeksBetween(d1, d2) {
 }
 
 module.exports = {
+    getMoment: function(zone){
+        //return getMoment().tz(zone).toString();
+        return getMoment();
+    },
     getSMH: function(){
         var numWeeks = weeksBetween(new Date("6/2/2018"), getClock());
         var rmndr = numWeeks % 4;
