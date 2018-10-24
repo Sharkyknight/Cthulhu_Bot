@@ -22,12 +22,26 @@ module.exports = {
         var response = (responses.endlife.replace("{0}", minutes).replace("{1}", deathtype));
         return response;
     },
-    flipCoin: function (isCarso){
-        if (isCarso){
-            return "Heads";
-        };
-        var int = Math.floor(Math.random() * 2);
-        return (int == 1) ? "Heads" : "Tails";
+    flipCoin: function (isCarso, num){
+        var count = parseInt(num);
+        if (!checkNum(num) || count < 1){ count = 1; }
+        if (isCarso && count == 3){   // Sorry Sharky :x
+            var temp = Math.floor(Math.random() * 3);
+            if (temp == 0) return ("(Heads: 2, Tails: 1) Heads,Heads,Tails");
+            else if (temp == 1) return ("(Heads: 2, Tails: 1) Tails,Heads,Heads");
+            else if (temp == 2) return ("(Heads: 2, Tails: 1) Heads,Tails,Heads");
+        }
+        var flips = new Array(count);
+        var heads = 0;
+        var tails = 0;
+        for (var i=0; i<count; i++){
+            var coin = Math.floor(Math.random() * 2);
+            flips[i] = ((coin == 1) ? "Heads" : "Tails");
+            if (coin == 1){ heads++; }
+            else { tails++; }
+        }
+        var response = "(Heads: " + heads + ", Tails: " + tails + ") " + flips.toString();
+        return response;
     },
     cthulhu: function (isAdmin, commands){
         if (!isAdmin) return responses.rejected;

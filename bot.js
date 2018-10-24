@@ -112,7 +112,7 @@ bot.on('message', message => {
             message.channel.sendMessage(responses.loveme.replace("{0}", message.author.username));
             break;
         case "flip" :
-            message.channel.sendMessage(misc.flipCoin((message.author.username == admins[1])));
+            message.channel.sendMessage(misc.flipCoin((message.author.username == admins[1]), commands[1]));
             break;
         
         // Admin only
