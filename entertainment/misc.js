@@ -1,5 +1,6 @@
 const responses = require('./../responses.json');
 const dialogues = require('./dialogues.json');
+const letters = require('./letters.json');
 
 /**
 * Parameters
@@ -10,6 +11,25 @@ const dialogues = require('./dialogues.json');
 function checkNum(str){
     var num = parseInt(str, 10);
     return (!isNaN(num) && !(num < 1));
+}
+
+/**
+* Parameters
+*   next: letters[char]
+*   arr: 
+* Return
+*   
+*/
+function addLetter(next, background, icon, arr){
+    for (var i=0; i<7; i++){
+        for (var j=0; j<next["1"].length; j++){
+            if (i == 0 || i == 6){ arr[i].push(background); }
+            else { arr[i].push(next[(i).toString()][j] == 0 ? background : icon); }
+        }
+    }
+    for (var i=0; i<arr.length; i++){
+        arr[i].push(" " + background);
+    }
 }
 
 module.exports = {
@@ -54,5 +74,23 @@ module.exports = {
             }
         }
         return response;
+    },
+    emotiwords: function (words, background, icon){
+        var n = 7;
+        var next;
+        var emoti = new Array();
+        for (var i=0; i<n; i++){ emoti.push(new Array()); }
+        for (var i=0; i<n; i++){ emoti[i].push(background); }
+        // for each letter in words, replace with background (0) or icon (1)
+        for (var i=0; i<words.length; i++){
+            next = letters[words.charAt(i).toString()];
+            addLetter(next, background, icon, emoti)
+        }
+        // New line between rows
+        for (var i=0; i<7; i++){ emoti[i].push("\n"); }
+        // Separate into lines without the separators
+        var str = "";
+        for (var i=0; i<7; i++){ str = str + emoti[i].join(""); }
+        return str;
     }
 }
