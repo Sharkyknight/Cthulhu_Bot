@@ -28,7 +28,7 @@ function addLetter(next, background, icon, arr){
         }
     }
     for (var i=0; i<arr.length; i++){
-        arr[i].push(" " + background);
+        arr[i].push(background);
     }
 }
 
