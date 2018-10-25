@@ -24,7 +24,6 @@ bot.on('message', message => {
     var selfieChannel = "selfies-pls";
     var userIsAdmin = admins.includes(message.author.username);   // User has admin permissions
     var cmds = commands.slice(0);
-    var adminCmds = commands.slice(3, commands.length).join("");
     var targetName = (typeof commands[1] === "undefined" || commands[1] === "me") ? message.author.username : (cmds.splice(1, cmds.length)).join(" ");
     
 
@@ -119,6 +118,8 @@ bot.on('message', message => {
         
         // Admin only
         case "print":
+            var adminCmds = commands.slice(3, commands.length).join("");
+            adminCmds.toLowerCase();
             var comment = userIsAdmin ? misc.emotiwords(adminCmds, commands[1], commands[2]) : responses.rejected;
             message.channel.sendMessage(comment);
             break;
