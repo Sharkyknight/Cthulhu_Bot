@@ -84,6 +84,7 @@ module.exports = {
         // for each letter in words, replace with background (0) or icon (1)
         for (var i=0; i<words.length; i++){
             next = letters[words.charAt(i).toString()];
+            if (!next){ continue; }
             addLetter(next, background, icon, emoti)
         }
         // New line between rows
