@@ -119,8 +119,8 @@ bot.on('message', message => {
         // Admin only
         case "print":
             var adminCmds = commands.slice(3, commands.length).join("");
-            adminCmds.toLowerCase();
-            var comment = userIsAdmin ? misc.emotiwords(adminCmds, commands[1], commands[2]) : responses.rejected;
+            var emoteText = adminCmds.toLowerCase();
+            var comment = userIsAdmin ? misc.emotiwords(emoteText, commands[1], commands[2]) : responses.rejected;
             message.channel.sendMessage(comment);
             break;
         case "001comment":
