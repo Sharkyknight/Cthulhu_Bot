@@ -97,6 +97,9 @@ bot.on('message', message => {
         case "endlife":
             message.channel.sendMessage(misc.endLife(commands[1], commands[2]));
             break;
+        case "sorry":
+            message.channel.sendMessage(commands[1] + "My apology, just like glue,\nfixes the broken (that's me and you).\nLet's apply some of this on us\nso we can make up without a fuss.");
+            break;
 
         // Dialogues, without commands
         case "blackbox":
