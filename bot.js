@@ -121,7 +121,7 @@ bot.on('message', message => {
         
         // Admin only
         case "print":
-            (if !userIsAdmin){
+            if (!userIsAdmin){
                 message.channel.sendMessage(responses.rejected);
                 break;
             }
