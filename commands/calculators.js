@@ -18,7 +18,7 @@ module.exports = {
         var breakeven = Math.ceil(((amount * 15) / (72 * 28)));
         return (responses.labor.replace("{0}", breakeven));
     },
-    getRum: function(swill, grog, rum){
+    getRum: function(swill, grog, rum){ // Is something wrong?
         if (!checkNum(swill) || !checkNum(grog) || !checkNum(rum)) {
             return responses.rumfail;
         }
