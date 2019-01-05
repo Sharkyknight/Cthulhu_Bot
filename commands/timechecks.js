@@ -108,5 +108,6 @@ module.exports = {
         /* Put time remaining into a string */
         var timeStr = "" + hours.toString() + "h " + minutes.toString() + "m";
         return (responses.rebootA.replace("{0}", timeStr) + "\n" + responses.rebootB);
+        // Did something go wrong?
     }
 }
